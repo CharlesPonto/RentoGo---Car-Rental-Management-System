@@ -38,5 +38,14 @@ namespace RentoGo___Car_Rental_Management_System
             {
             }
         }
+
+        //temporary
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+           
+                MainForm form = new MainForm();
+                form.Show();
+            
+        }
     }
 }

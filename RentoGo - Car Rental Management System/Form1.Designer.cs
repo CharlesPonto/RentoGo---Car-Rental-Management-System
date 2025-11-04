@@ -71,6 +71,7 @@
             this.btnLogin.Size = new System.Drawing.Size(327, 43);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Log in";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label2
             // 
@@ -214,7 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(436, 503);
+            this.ClientSize = new System.Drawing.Size(436, 511);
             this.Controls.Add(this.cbShowPass);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtUsername);
