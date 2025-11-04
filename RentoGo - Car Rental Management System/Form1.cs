@@ -31,5 +31,12 @@ namespace RentoGo___Car_Rental_Management_System
                 Application.Exit();
             }
         }
+
+        private void cbShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbShowPass.Checked)
+            {
+            }
+        }
     }
 }
