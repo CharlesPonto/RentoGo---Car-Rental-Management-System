@@ -55,17 +55,17 @@
             this.guna2GradientButton1.BorderRadius = 6;
             this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(97)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(54, 403);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(54, 410);
             this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(327, 39);
-            this.guna2GradientButton1.TabIndex = 4;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(327, 43);
+            this.guna2GradientButton1.TabIndex = 3;
             this.guna2GradientButton1.Text = "Log in";
             // 
             // guna2HtmlLabel2
@@ -130,7 +130,7 @@
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
             this.guna2TextBox2.Size = new System.Drawing.Size(327, 39);
-            this.guna2TextBox2.TabIndex = 9;
+            this.guna2TextBox2.TabIndex = 2;
             // 
             // guna2TextBox1
             // 
@@ -155,7 +155,7 @@
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(327, 39);
-            this.guna2TextBox1.TabIndex = 10;
+            this.guna2TextBox1.TabIndex = 1;
             // 
             // guna2CirclePictureBox1
             // 
@@ -175,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(436, 483);
+            this.ClientSize = new System.Drawing.Size(436, 492);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.guna2TextBox2);
             this.Controls.Add(this.guna2HtmlLabel4);
