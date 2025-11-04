@@ -94,7 +94,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\x-button.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo4.png" />
   </ItemGroup>
