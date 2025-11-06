@@ -29,47 +29,24 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 334);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(33, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Payments Page";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 418);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 42);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Payments Page";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(700, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 42);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Payments Page";
+            this.label1.Size = new System.Drawing.Size(207, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Vehicle Records";
             // 
             // PaymentsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label1);
             this.Name = "PaymentsControl";
             this.Size = new System.Drawing.Size(964, 711);
@@ -81,7 +58,5 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

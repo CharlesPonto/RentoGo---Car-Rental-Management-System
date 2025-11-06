@@ -47,7 +47,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(88, 152);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 34);
             this.label1.TabIndex = 2;
@@ -55,6 +55,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Animated = true;
             this.btnLogin.BorderRadius = 6;
             this.btnLogin.CheckedState.Parent = this.btnLogin;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -65,7 +66,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.Parent = this.btnLogin;
             this.btnLogin.Location = new System.Drawing.Point(54, 427);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(327, 43);
@@ -80,7 +81,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
             this.label2.Location = new System.Drawing.Point(78, 190);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(284, 24);
             this.label2.TabIndex = 5;
@@ -93,7 +94,7 @@
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblUsername.Location = new System.Drawing.Point(54, 238);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(284, 24);
             this.lblUsername.TabIndex = 6;
@@ -106,7 +107,7 @@
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPassword.Location = new System.Drawing.Point(54, 316);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(284, 24);
             this.lblPassword.TabIndex = 7;
@@ -128,7 +129,7 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
             this.txtPassword.Location = new System.Drawing.Point(54, 345);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "";
@@ -153,7 +154,7 @@
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.HoverState.Parent = this.txtUsername;
             this.txtUsername.Location = new System.Drawing.Point(54, 267);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "";
@@ -209,7 +210,7 @@
             this.cbShowPass.UseVisualStyleBackColor = true;
             this.cbShowPass.CheckedChanged += new System.EventHandler(this.cbShowPass_CheckedChanged);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,12 +228,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "whi";
+            this.Text = "ok";
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);

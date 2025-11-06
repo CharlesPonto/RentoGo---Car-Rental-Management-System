@@ -37,17 +37,14 @@ namespace RentoGo___Car_Rental_Management_System
 
         private void ActivateButton(Guna.UI2.WinForms.Guna2Button button)
         {
-            // Reset previous active button
             if (currentButton != null)
             {
                 currentButton.FillColor = Color.White;
                 currentButton.ForeColor = Color.FromArgb(64, 64, 64);
             }
 
-            // Highlight the new active button
             currentButton = button;
-            currentButton.FillColor = Color.FromArgb(123, 62, 255); 
-            currentButton.ForeColor = Color.White;
+            currentButton.FillColor = Color.FromArgb(211, 194, 255); 
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

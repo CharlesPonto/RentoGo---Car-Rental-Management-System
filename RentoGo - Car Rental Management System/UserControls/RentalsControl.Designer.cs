@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 334);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Rentals Page";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(33, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(254, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Rental Transactions";
             // 
             // RentalsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.label2);
             this.Name = "RentalsControl";
             this.Size = new System.Drawing.Size(964, 711);
             this.ResumeLayout(false);
@@ -56,6 +57,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
