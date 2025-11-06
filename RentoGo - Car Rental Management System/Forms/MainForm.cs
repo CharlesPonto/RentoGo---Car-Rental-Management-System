@@ -20,11 +20,8 @@ namespace RentoGo___Car_Rental_Management_System
         public MainForm()
         {
             InitializeComponent();
-        }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            // Initialize and show Dashboard as default page
+            // Preload Dashboard (default page)
             dashboardControl1 = new DashboardControl();
             ShowControl(dashboardControl1);
             ActivateButton(btnDashboard);
@@ -32,8 +29,8 @@ namespace RentoGo___Car_Rental_Management_System
 
         private void ShowControl(UserControl controlToShow)
         {
-            panelPages.Controls.Clear();      // Clear previous control
-            controlToShow.Dock = DockStyle.Fill;     // Fit to panel
+            panelPages.Controls.Clear();
+            controlToShow.Dock = DockStyle.Fill;
             panelPages.Controls.Add(controlToShow);
             controlToShow.BringToFront();
         }
@@ -49,7 +46,7 @@ namespace RentoGo___Car_Rental_Management_System
 
             // Highlight the new active button
             currentButton = button;
-            currentButton.FillColor = Color.FromArgb(123, 62, 255); // RentoGo Purple
+            currentButton.FillColor = Color.FromArgb(123, 62, 255); 
             currentButton.ForeColor = Color.White;
         }
 
@@ -58,7 +55,7 @@ namespace RentoGo___Car_Rental_Management_System
             if (dashboardControl1 == null)
                 dashboardControl1 = new DashboardControl();
 
-            ShowControl(dashboardControl);
+            ShowControl(dashboardControl1);
             ActivateButton(btnDashboard);
         }
 
@@ -67,7 +64,7 @@ namespace RentoGo___Car_Rental_Management_System
             if (vehiclesControl1 == null)
                 vehiclesControl1 = new VehiclesControl();
 
-            ShowControl(vehiclesControl);
+            ShowControl(vehiclesControl1);
             ActivateButton(btnVehicles);
         }
 
@@ -76,7 +73,7 @@ namespace RentoGo___Car_Rental_Management_System
             if (customerControl1 == null)
                 customerControl1 = new CustomerControl();
 
-            ShowControl(customerControl);
+            ShowControl(customerControl1);
             ActivateButton(btnCustomers);
         }
 

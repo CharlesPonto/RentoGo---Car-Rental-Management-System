@@ -38,15 +38,8 @@
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPages = new Guna.UI2.WinForms.Guna2Panel();
-            this.dashboardControl = new RentoGo___Car_Rental_Management_System.UserControls.DashboardControl();
-            this.vehiclesControl = new RentoGo___Car_Rental_Management_System.UserControls.VehiclesControl();
-            this.customerControl = new RentoGo___Car_Rental_Management_System.UserControls.CustomerControl();
-            this.rentalsControl = new RentoGo___Car_Rental_Management_System.UserControls.RentalsControl();
-            this.paymentsControl = new RentoGo___Car_Rental_Management_System.UserControls.PaymentsControl();
-            this.returnsControl = new RentoGo___Car_Rental_Management_System.UserControls.ReturnsControl();
             this.panelSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelPages.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideBar
@@ -62,10 +55,9 @@
             this.panelSideBar.Controls.Add(this.pictureBox1);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
-            this.panelSideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSideBar.Name = "panelSideBar";
             this.panelSideBar.ShadowDecoration.Parent = this.panelSideBar;
-            this.panelSideBar.Size = new System.Drawing.Size(293, 875);
+            this.panelSideBar.Size = new System.Drawing.Size(220, 711);
             this.panelSideBar.TabIndex = 2;
             // 
             // btnLogout
@@ -87,11 +79,10 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLogout.Location = new System.Drawing.Point(16, 811);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(12, 659);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
-            this.btnLogout.Size = new System.Drawing.Size(255, 49);
+            this.btnLogout.Size = new System.Drawing.Size(191, 40);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -116,12 +107,11 @@
             this.btnReturns.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReturns.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnReturns.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnReturns.Location = new System.Drawing.Point(16, 463);
-            this.btnReturns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturns.Location = new System.Drawing.Point(12, 376);
             this.btnReturns.Name = "btnReturns";
             this.btnReturns.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnReturns.ShadowDecoration.Parent = this.btnReturns;
-            this.btnReturns.Size = new System.Drawing.Size(255, 49);
+            this.btnReturns.Size = new System.Drawing.Size(191, 40);
             this.btnReturns.TabIndex = 6;
             this.btnReturns.Text = "Returns";
             this.btnReturns.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -147,12 +137,11 @@
             this.btnPayments.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPayments.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnPayments.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPayments.Location = new System.Drawing.Point(16, 406);
-            this.btnPayments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPayments.Location = new System.Drawing.Point(12, 330);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnPayments.ShadowDecoration.Parent = this.btnPayments;
-            this.btnPayments.Size = new System.Drawing.Size(255, 49);
+            this.btnPayments.Size = new System.Drawing.Size(191, 40);
             this.btnPayments.TabIndex = 5;
             this.btnPayments.Text = "Payments";
             this.btnPayments.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -178,12 +167,11 @@
             this.btnRentals.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRentals.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnRentals.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnRentals.Location = new System.Drawing.Point(16, 350);
-            this.btnRentals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRentals.Location = new System.Drawing.Point(12, 284);
             this.btnRentals.Name = "btnRentals";
             this.btnRentals.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnRentals.ShadowDecoration.Parent = this.btnRentals;
-            this.btnRentals.Size = new System.Drawing.Size(255, 49);
+            this.btnRentals.Size = new System.Drawing.Size(191, 40);
             this.btnRentals.TabIndex = 4;
             this.btnRentals.Text = "Rentals";
             this.btnRentals.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -209,12 +197,11 @@
             this.btnCustomers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomers.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnCustomers.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnCustomers.Location = new System.Drawing.Point(16, 293);
-            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomers.Location = new System.Drawing.Point(12, 238);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnCustomers.ShadowDecoration.Parent = this.btnCustomers;
-            this.btnCustomers.Size = new System.Drawing.Size(255, 49);
+            this.btnCustomers.Size = new System.Drawing.Size(191, 40);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -240,12 +227,11 @@
             this.btnVehicles.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVehicles.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnVehicles.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnVehicles.Location = new System.Drawing.Point(16, 236);
-            this.btnVehicles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVehicles.Location = new System.Drawing.Point(12, 192);
             this.btnVehicles.Name = "btnVehicles";
             this.btnVehicles.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnVehicles.ShadowDecoration.Parent = this.btnVehicles;
-            this.btnVehicles.Size = new System.Drawing.Size(255, 49);
+            this.btnVehicles.Size = new System.Drawing.Size(191, 40);
             this.btnVehicles.TabIndex = 2;
             this.btnVehicles.Text = "Vehicles";
             this.btnVehicles.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -272,12 +258,11 @@
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(26, 0);
             this.btnDashboard.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDashboard.Location = new System.Drawing.Point(16, 180);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(12, 146);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnDashboard.ShadowDecoration.Parent = this.btnDashboard;
-            this.btnDashboard.Size = new System.Drawing.Size(255, 49);
+            this.btnDashboard.Size = new System.Drawing.Size(191, 40);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -287,10 +272,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(23, -28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(17, -23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 212);
+            this.pictureBox1.Size = new System.Drawing.Size(186, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -298,90 +282,27 @@
             // panelPages
             // 
             this.panelPages.BackColor = System.Drawing.Color.Violet;
-            this.panelPages.Controls.Add(this.dashboardControl);
-            this.panelPages.Controls.Add(this.vehiclesControl);
-            this.panelPages.Controls.Add(this.customerControl);
-            this.panelPages.Controls.Add(this.rentalsControl);
-            this.panelPages.Controls.Add(this.paymentsControl);
-            this.panelPages.Controls.Add(this.returnsControl);
             this.panelPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPages.Location = new System.Drawing.Point(293, 0);
-            this.panelPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPages.Location = new System.Drawing.Point(220, 0);
             this.panelPages.Name = "panelPages";
             this.panelPages.ShadowDecoration.Parent = this.panelPages;
-            this.panelPages.Size = new System.Drawing.Size(1286, 875);
+            this.panelPages.Size = new System.Drawing.Size(964, 711);
             this.panelPages.TabIndex = 3;
-            // 
-            // dashboardControl
-            // 
-            this.dashboardControl.BackColor = System.Drawing.Color.White;
-            this.dashboardControl.Location = new System.Drawing.Point(0, 0);
-            this.dashboardControl.Margin = new System.Windows.Forms.Padding(5);
-            this.dashboardControl.Name = "dashboardControl";
-            this.dashboardControl.Size = new System.Drawing.Size(1715, 1077);
-            this.dashboardControl.TabIndex = 5;
-            // 
-            // vehiclesControl
-            // 
-            this.vehiclesControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.vehiclesControl.Location = new System.Drawing.Point(0, 0);
-            this.vehiclesControl.Margin = new System.Windows.Forms.Padding(5);
-            this.vehiclesControl.Name = "vehiclesControl";
-            this.vehiclesControl.Size = new System.Drawing.Size(1608, 1094);
-            this.vehiclesControl.TabIndex = 4;
-            // 
-            // customerControl
-            // 
-            this.customerControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customerControl.Location = new System.Drawing.Point(0, 0);
-            this.customerControl.Margin = new System.Windows.Forms.Padding(5);
-            this.customerControl.Name = "customerControl";
-            this.customerControl.Size = new System.Drawing.Size(1608, 1094);
-            this.customerControl.TabIndex = 3;
-            // 
-            // rentalsControl
-            // 
-            this.rentalsControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rentalsControl.Location = new System.Drawing.Point(0, 0);
-            this.rentalsControl.Margin = new System.Windows.Forms.Padding(5);
-            this.rentalsControl.Name = "rentalsControl";
-            this.rentalsControl.Size = new System.Drawing.Size(1608, 1094);
-            this.rentalsControl.TabIndex = 2;
-            // 
-            // paymentsControl
-            // 
-            this.paymentsControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.paymentsControl.Location = new System.Drawing.Point(0, 0);
-            this.paymentsControl.Margin = new System.Windows.Forms.Padding(5);
-            this.paymentsControl.Name = "paymentsControl";
-            this.paymentsControl.Size = new System.Drawing.Size(1608, 1094);
-            this.paymentsControl.TabIndex = 1;
-            // 
-            // returnsControl
-            // 
-            this.returnsControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.returnsControl.Location = new System.Drawing.Point(0, 0);
-            this.returnsControl.Margin = new System.Windows.Forms.Padding(5);
-            this.returnsControl.Name = "returnsControl";
-            this.returnsControl.Size = new System.Drawing.Size(1285, 875);
-            this.returnsControl.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1579, 875);
+            this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.panelPages);
             this.Controls.Add(this.panelSideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.panelSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelPages.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,12 +318,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Panel panelPages;
-        private UserControls.ReturnsControl returnsControl;
-        private UserControls.CustomerControl customerControl;
-        private UserControls.RentalsControl rentalsControl;
-        private UserControls.PaymentsControl paymentsControl;
-        private UserControls.VehiclesControl vehiclesControl;
-        private UserControls.DashboardControl dashboardControl;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
     }
 }
