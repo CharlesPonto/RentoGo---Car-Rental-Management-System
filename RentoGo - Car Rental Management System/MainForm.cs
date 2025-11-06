@@ -37,7 +37,6 @@ namespace RentoGo___Car_Rental_Management_System
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            loadForm(new Customer());
         }
     }
 }

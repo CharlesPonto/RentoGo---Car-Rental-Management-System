@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RentoGo___Car_Rental_Management_System
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
