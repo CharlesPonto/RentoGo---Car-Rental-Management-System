@@ -164,8 +164,23 @@
   <ItemGroup>
     <None Include="Resources\logo4.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\Side Bar Icons\" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\wallet.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\logout.png" />
+    <Content Include="Resources\Side Bar Icons\calendar.png" />
+    <Content Include="Resources\Side Bar Icons\car.png" />
+    <Content Include="Resources\Side Bar Icons\customer.png" />
+    <Content Include="Resources\Side Bar Icons\dashboard.png" />
+    <Content Include="Resources\Side Bar Icons\logout.png" />
+    <Content Include="Resources\Side Bar Icons\return.png" />
+    <Content Include="Resources\Side Bar Icons\wallet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
