@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.panelStatsCard = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -40,7 +40,7 @@
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblTotaLCustomers = new System.Windows.Forms.Label();
+            this.lblTotalCustomers = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@
             this.guna2CustomGradientPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
             this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(198, 101);
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(222, 101);
             this.guna2CustomGradientPanel4.TabIndex = 6;
             // 
             // guna2PictureBox4
@@ -133,21 +133,21 @@
             // lblMonthlyRevenue
             // 
             this.lblMonthlyRevenue.AutoSize = true;
-            this.lblMonthlyRevenue.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlyRevenue.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonthlyRevenue.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthlyRevenue.Location = new System.Drawing.Point(93, 29);
+            this.lblMonthlyRevenue.Location = new System.Drawing.Point(95, 36);
             this.lblMonthlyRevenue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMonthlyRevenue.Name = "lblMonthlyRevenue";
-            this.lblMonthlyRevenue.Size = new System.Drawing.Size(32, 37);
+            this.lblMonthlyRevenue.Size = new System.Drawing.Size(24, 28);
             this.lblMonthlyRevenue.TabIndex = 0;
-            this.lblMonthlyRevenue.Text = "2";
+            this.lblMonthlyRevenue.Text = "P";
             // 
             // guna2CustomGradientPanel3
             // 
             this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2PictureBox1);
             this.guna2CustomGradientPanel3.Controls.Add(this.label5);
-            this.guna2CustomGradientPanel3.Controls.Add(this.lblTotaLCustomers);
+            this.guna2CustomGradientPanel3.Controls.Add(this.lblTotalCustomers);
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.Transparent;
@@ -182,17 +182,17 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Total Customers";
             // 
-            // lblTotaLCustomers
+            // lblTotalCustomers
             // 
-            this.lblTotaLCustomers.AutoSize = true;
-            this.lblTotaLCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotaLCustomers.ForeColor = System.Drawing.Color.Black;
-            this.lblTotaLCustomers.Location = new System.Drawing.Point(93, 29);
-            this.lblTotaLCustomers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotaLCustomers.Name = "lblTotaLCustomers";
-            this.lblTotaLCustomers.Size = new System.Drawing.Size(32, 37);
-            this.lblTotaLCustomers.TabIndex = 0;
-            this.lblTotaLCustomers.Text = "2";
+            this.lblTotalCustomers.AutoSize = true;
+            this.lblTotalCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCustomers.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalCustomers.Location = new System.Drawing.Point(93, 29);
+            this.lblTotalCustomers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCustomers.Name = "lblTotalCustomers";
+            this.lblTotalCustomers.Size = new System.Drawing.Size(32, 37);
+            this.lblTotalCustomers.TabIndex = 0;
+            this.lblTotalCustomers.Text = "0";
             // 
             // guna2CustomGradientPanel2
             // 
@@ -244,7 +244,7 @@
             this.lblActiveRentals.Name = "lblActiveRentals";
             this.lblActiveRentals.Size = new System.Drawing.Size(32, 37);
             this.lblActiveRentals.TabIndex = 0;
-            this.lblActiveRentals.Text = "2";
+            this.lblActiveRentals.Text = "0";
             // 
             // guna2CustomGradientPanel1
             // 
@@ -296,7 +296,7 @@
             this.lblTotalVehicles.Name = "lblTotalVehicles";
             this.lblTotalVehicles.Size = new System.Drawing.Size(32, 37);
             this.lblTotalVehicles.TabIndex = 0;
-            this.lblTotalVehicles.Text = "2";
+            this.lblTotalVehicles.Text = "0";
             // 
             // guna2CustomGradientPanel5
             // 
@@ -307,7 +307,7 @@
             this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
             this.guna2CustomGradientPanel5.ShadowDecoration.Parent = this.guna2CustomGradientPanel5;
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(404, 310);
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(398, 277);
             this.guna2CustomGradientPanel5.TabIndex = 5;
             // 
             // label4
@@ -324,20 +324,27 @@
             // 
             // chartVehicleStatus
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartVehicleStatus.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
-            legend1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chartVehicleStatus.Legends.Add(legend1);
+            this.chartVehicleStatus.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartVehicleStatus.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            legend3.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.chartVehicleStatus.Legends.Add(legend3);
             this.chartVehicleStatus.Location = new System.Drawing.Point(24, 47);
             this.chartVehicleStatus.Name = "chartVehicleStatus";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "VehicleStatus";
-            this.chartVehicleStatus.Series.Add(series1);
-            this.chartVehicleStatus.Size = new System.Drawing.Size(300, 250);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.LabelForeColor = System.Drawing.Color.White;
+            series3.Legend = "Legend1";
+            series3.Name = "VehicleStatus";
+            this.chartVehicleStatus.Series.Add(series3);
+            this.chartVehicleStatus.Size = new System.Drawing.Size(343, 228);
             this.chartVehicleStatus.TabIndex = 0;
             this.chartVehicleStatus.Text = "chart1";
             // 
@@ -351,6 +358,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DashboardControl";
             this.Size = new System.Drawing.Size(964, 711);
+            this.Load += new System.EventHandler(this.DashboardControl_Load);
             this.panelStatsCard.ResumeLayout(false);
             this.guna2CustomGradientPanel4.ResumeLayout(false);
             this.guna2CustomGradientPanel4.PerformLayout();
@@ -384,7 +392,7 @@
         private System.Windows.Forms.Label lblMonthlyRevenue;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTotaLCustomers;
+        private System.Windows.Forms.Label lblTotalCustomers;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblActiveRentals;
