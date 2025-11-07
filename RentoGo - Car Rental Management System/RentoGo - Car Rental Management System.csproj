@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\totalCustDb.png" />
     <None Include="Resources\undo.png" />
     <None Include="Resources\dashboard.png" />
     <None Include="Resources\car.png" />
@@ -174,6 +175,13 @@
     <None Include="Resources\wallet.png" />
     <None Include="Resources\return.png" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\dbCar.png" />
+    <None Include="Resources\dbRental.png" />
+    <None Include="Resources\dbUsers.png" />
+    <None Include="Resources\dashCustomer.png" />
+    <None Include="Resources\dashCar.png" />
+    <None Include="Resources\dashRevenue.png" />
+    <None Include="Resources\dashActiveRentals.png" />
     <Content Include="Resources\Side Bar Icons\calendar.png" />
     <Content Include="Resources\Side Bar Icons\car.png" />
     <Content Include="Resources\Side Bar Icons\customer.png" />

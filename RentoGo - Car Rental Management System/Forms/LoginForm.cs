@@ -18,6 +18,10 @@ namespace RentoGo___Car_Rental_Management_System
         public LoginForm()
         {
             InitializeComponent();
+            MainForm main = new MainForm();
+            this.Hide();
+            main.ShowDialog();
+            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
