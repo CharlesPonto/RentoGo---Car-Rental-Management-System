@@ -14,7 +14,6 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
 {
     public partial class DashboardControl : UserControl
     {
-        // ✅ Connection to your Microsoft SQL Server
         private string connectionString = @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
 
         public DashboardControl()
@@ -26,10 +25,9 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
         {
             LoadDashboardStats();
             LoadVehicleStatusChart();
-            //LoadRecentRentals();
+            LoadRecentRentals();
         }
 
-        // 🟣 Load the four main statistics (top cards)
         private void LoadDashboardStats()
         {
             try
@@ -38,28 +36,24 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 {
                     con.Open();
 
-                    // 1️⃣ Total Vehicles
                     using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Vehicles", con))
                     {
                         int totalVehicles = Convert.ToInt32(cmd.ExecuteScalar());
                         lblTotalVehicles.Text = totalVehicles.ToString();
                     }
 
-                    // 2️⃣ Total Customers
                     using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Customers", con))
                     {
                         int totalCustomers = Convert.ToInt32(cmd.ExecuteScalar());
                         lblTotalCustomers.Text = totalCustomers.ToString();
                     }
 
-                    // 3️⃣ Active Rentals
                     using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Rentals WHERE Status = 'Active'", con))
                     {
                         int activeRentals = Convert.ToInt32(cmd.ExecuteScalar());
                         lblActiveRentals.Text = activeRentals.ToString();
                     }
 
-                    // 4️⃣ Monthly Revenue (instead of Total Income)
                     using (SqlCommand cmd = new SqlCommand(@"
                         SELECT ISNULL(SUM(Amount), 0)
                         FROM Payments
@@ -78,7 +72,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             }
         }
 
-        // 🟡 Vehicle Status Chart (Pie/Doughnut)
+        //Vehicle Status Chart
         private void LoadVehicleStatusChart()
         {
             try
@@ -110,47 +104,56 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             }
         }
 
-        // 🔵 Recent Rentals Table
-        /* private void LoadRecentRentals()
-         {
-             try
-             {
-                 using (SqlConnection con = new SqlConnection(connectionString))
-                 {
-                     con.Open();
-                     string query = @"
-                         SELECT TOP 8 
-                             r.RentalID,
-                             c.FullName AS Customer,
-                             v.Model AS Vehicle,
-                             r.StartDate,
-                             r.EndDate,
-                             r.Status
-                         FROM Rentals r
-                         JOIN Customers c ON r.CustomerID = c.CustomerID
-                         JOIN Vehicles v ON r.VehicleID = v.VehicleID
-                         ORDER BY r.StartDate DESC";
+        //Recent Rentals Table
+        private void LoadRecentRentals()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = @"
+                 SELECT TOP 8 
+                     r.RentalID,
+                     c.FullName AS Customer,
+                     v.Model AS Vehicle,
+                     r.StartDate,
+                     r.EndDate,
+                     r.Status
+                 FROM Rentals r
+                 JOIN Customers c ON r.CustomerID = c.CustomerID
+                 JOIN Vehicles v ON r.VehicleID = v.VehicleID
+                 ORDER BY r.StartDate DESC";
 
-                     SqlDataAdapter da = new SqlDataAdapter(query, con);
-                     DataTable dt = new DataTable();
-                     da.Fill(dt);
-                     dgvRecentRentals.DataSource = dt;
-                 }
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgvRecentRentals.DataSource = dt;
+                }
 
-                 // DataGridView styling
-                 dgvRecentRentals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                 dgvRecentRentals.RowTemplate.Height = 30;
-                 dgvRecentRentals.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9);
-                 dgvRecentRentals.EnableHeadersVisualStyles = false;
-                 dgvRecentRentals.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(123, 62, 255);
-                 dgvRecentRentals.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
-                 dgvRecentRentals.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("⚠ Error loading recent rentals:\n" + ex.Message,
-                     "Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-         }*/
+                dgvRecentRentals.ClearSelection();
+                dgvRecentRentals.CurrentCell = null;
+
+                // remove selection
+                dgvRecentRentals.SelectionChanged += (s, e) =>
+                {
+                    dgvRecentRentals.ClearSelection();
+                    dgvRecentRentals.CurrentCell = null;
+                };
+
+                dgvRecentRentals.GotFocus += (s, e) =>
+                {
+                    this.ActiveControl = null;
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("⚠ Error loading recent rentals:\n" + ex.Message,
+                    "Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
     }
 }

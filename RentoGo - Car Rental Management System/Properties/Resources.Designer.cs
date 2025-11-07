@@ -203,6 +203,26 @@ namespace RentoGo___Car_Rental_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoV2 {
+            get {
+                object obj = ResourceManager.GetObject("LogoV2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoV3 {
+            get {
+                object obj = ResourceManager.GetObject("LogoV3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap totalCustDb {
             get {
                 object obj = ResourceManager.GetObject("totalCustDb", resourceCulture);

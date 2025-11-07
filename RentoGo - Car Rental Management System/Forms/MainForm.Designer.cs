@@ -68,11 +68,12 @@
             this.btnLogout.BorderRadius = 6;
             this.btnLogout.CheckedState.Parent = this.btnLogout;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnLogout.CustomImages.Parent = this.btnLogout;
             this.btnLogout.FillColor = System.Drawing.Color.White;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLogout.HoverState.Parent = this.btnLogout;
             this.btnLogout.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -80,6 +81,7 @@
             this.btnLogout.ImageSize = new System.Drawing.Size(25, 25);
             this.btnLogout.Location = new System.Drawing.Point(12, 422);
             this.btnLogout.Name = "btnLogout";
+            this.btnLogout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
             this.btnLogout.Size = new System.Drawing.Size(191, 40);
             this.btnLogout.TabIndex = 7;
@@ -95,11 +97,12 @@
             this.btnReturns.BorderRadius = 6;
             this.btnReturns.CheckedState.Parent = this.btnReturns;
             this.btnReturns.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReturns.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnReturns.CustomImages.Parent = this.btnReturns;
             this.btnReturns.FillColor = System.Drawing.Color.White;
             this.btnReturns.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReturns.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnReturns.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReturns.HoverState.Parent = this.btnReturns;
             this.btnReturns.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.undo;
             this.btnReturns.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -107,6 +110,7 @@
             this.btnReturns.ImageSize = new System.Drawing.Size(25, 25);
             this.btnReturns.Location = new System.Drawing.Point(12, 376);
             this.btnReturns.Name = "btnReturns";
+            this.btnReturns.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReturns.ShadowDecoration.Parent = this.btnReturns;
             this.btnReturns.Size = new System.Drawing.Size(191, 40);
             this.btnReturns.TabIndex = 6;
@@ -123,11 +127,12 @@
             this.btnPayments.BorderRadius = 6;
             this.btnPayments.CheckedState.Parent = this.btnPayments;
             this.btnPayments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayments.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnPayments.CustomImages.Parent = this.btnPayments;
             this.btnPayments.FillColor = System.Drawing.Color.White;
             this.btnPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPayments.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnPayments.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPayments.HoverState.Parent = this.btnPayments;
             this.btnPayments.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.wallet;
             this.btnPayments.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -135,6 +140,7 @@
             this.btnPayments.ImageSize = new System.Drawing.Size(25, 25);
             this.btnPayments.Location = new System.Drawing.Point(12, 330);
             this.btnPayments.Name = "btnPayments";
+            this.btnPayments.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPayments.ShadowDecoration.Parent = this.btnPayments;
             this.btnPayments.Size = new System.Drawing.Size(191, 40);
             this.btnPayments.TabIndex = 5;
@@ -151,11 +157,12 @@
             this.btnRentals.BorderRadius = 6;
             this.btnRentals.CheckedState.Parent = this.btnRentals;
             this.btnRentals.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRentals.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRentals.CustomImages.Parent = this.btnRentals;
             this.btnRentals.FillColor = System.Drawing.Color.White;
             this.btnRentals.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRentals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRentals.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnRentals.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnRentals.HoverState.Parent = this.btnRentals;
             this.btnRentals.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.calendar;
             this.btnRentals.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -163,6 +170,7 @@
             this.btnRentals.ImageSize = new System.Drawing.Size(25, 25);
             this.btnRentals.Location = new System.Drawing.Point(12, 284);
             this.btnRentals.Name = "btnRentals";
+            this.btnRentals.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRentals.ShadowDecoration.Parent = this.btnRentals;
             this.btnRentals.Size = new System.Drawing.Size(191, 40);
             this.btnRentals.TabIndex = 4;
@@ -179,11 +187,12 @@
             this.btnCustomers.BorderRadius = 6;
             this.btnCustomers.CheckedState.Parent = this.btnCustomers;
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomers.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCustomers.CustomImages.Parent = this.btnCustomers;
             this.btnCustomers.FillColor = System.Drawing.Color.White;
             this.btnCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCustomers.HoverState.Parent = this.btnCustomers;
             this.btnCustomers.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.customer;
             this.btnCustomers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -191,6 +200,7 @@
             this.btnCustomers.ImageSize = new System.Drawing.Size(25, 25);
             this.btnCustomers.Location = new System.Drawing.Point(12, 238);
             this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCustomers.ShadowDecoration.Parent = this.btnCustomers;
             this.btnCustomers.Size = new System.Drawing.Size(191, 40);
             this.btnCustomers.TabIndex = 3;
@@ -207,11 +217,12 @@
             this.btnVehicles.BorderRadius = 6;
             this.btnVehicles.CheckedState.Parent = this.btnVehicles;
             this.btnVehicles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVehicles.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnVehicles.CustomImages.Parent = this.btnVehicles;
             this.btnVehicles.FillColor = System.Drawing.Color.White;
             this.btnVehicles.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnVehicles.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnVehicles.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnVehicles.HoverState.Parent = this.btnVehicles;
             this.btnVehicles.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.car;
             this.btnVehicles.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -219,6 +230,7 @@
             this.btnVehicles.ImageSize = new System.Drawing.Size(25, 25);
             this.btnVehicles.Location = new System.Drawing.Point(12, 192);
             this.btnVehicles.Name = "btnVehicles";
+            this.btnVehicles.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnVehicles.ShadowDecoration.Parent = this.btnVehicles;
             this.btnVehicles.Size = new System.Drawing.Size(191, 40);
             this.btnVehicles.TabIndex = 2;
@@ -235,11 +247,12 @@
             this.btnDashboard.BorderRadius = 6;
             this.btnDashboard.CheckedState.Parent = this.btnDashboard;
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnDashboard.CustomImages.Parent = this.btnDashboard;
-            this.btnDashboard.FillColor = System.Drawing.Color.White;
+            this.btnDashboard.FillColor = System.Drawing.Color.Empty;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDashboard.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDashboard.HoverState.Parent = this.btnDashboard;
             this.btnDashboard.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.dashboard;
@@ -248,6 +261,7 @@
             this.btnDashboard.ImageSize = new System.Drawing.Size(25, 25);
             this.btnDashboard.Location = new System.Drawing.Point(12, 146);
             this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDashboard.ShadowDecoration.Parent = this.btnDashboard;
             this.btnDashboard.Size = new System.Drawing.Size(191, 40);
             this.btnDashboard.TabIndex = 0;
@@ -258,10 +272,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(17, -23);
+            this.pictureBox1.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.LogoV3;
+            this.pictureBox1.Location = new System.Drawing.Point(28, -22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(186, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;

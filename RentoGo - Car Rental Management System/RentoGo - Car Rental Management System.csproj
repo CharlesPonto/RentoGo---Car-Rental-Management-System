@@ -182,6 +182,8 @@
     <None Include="Resources\dashCar.png" />
     <None Include="Resources\dashRevenue.png" />
     <None Include="Resources\dashActiveRentals.png" />
+    <None Include="Resources\LogoV2.png" />
+    <None Include="Resources\LogoV3.png" />
     <Content Include="Resources\Side Bar Icons\calendar.png" />
     <Content Include="Resources\Side Bar Icons\car.png" />
     <Content Include="Resources\Side Bar Icons\customer.png" />

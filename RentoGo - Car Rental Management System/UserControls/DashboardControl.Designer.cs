@@ -31,6 +31,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panelStatsCard = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -52,6 +55,9 @@
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.chartVehicleStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dgvRecentRentals = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelStatsCard.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
@@ -63,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2CustomGradientPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVehicleStatus)).BeginInit();
+            this.guna2CustomGradientPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRentals)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -307,7 +315,7 @@
             this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
             this.guna2CustomGradientPanel5.ShadowDecoration.Parent = this.guna2CustomGradientPanel5;
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(398, 277);
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(398, 239);
             this.guna2CustomGradientPanel5.TabIndex = 5;
             // 
             // label4
@@ -318,9 +326,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(20, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 21);
+            this.label4.Size = new System.Drawing.Size(145, 21);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Vehicle Status Distribution";
+            this.label4.Text = "Vehicle Availability";
             // 
             // chartVehicleStatus
             // 
@@ -335,7 +343,7 @@
             legend3.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             legend3.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.chartVehicleStatus.Legends.Add(legend3);
-            this.chartVehicleStatus.Location = new System.Drawing.Point(24, 47);
+            this.chartVehicleStatus.Location = new System.Drawing.Point(24, 38);
             this.chartVehicleStatus.Name = "chartVehicleStatus";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -344,15 +352,100 @@
             series3.Legend = "Legend1";
             series3.Name = "VehicleStatus";
             this.chartVehicleStatus.Series.Add(series3);
-            this.chartVehicleStatus.Size = new System.Drawing.Size(343, 228);
+            this.chartVehicleStatus.Size = new System.Drawing.Size(341, 189);
             this.chartVehicleStatus.TabIndex = 0;
             this.chartVehicleStatus.Text = "chart1";
+            // 
+            // guna2CustomGradientPanel6
+            // 
+            this.guna2CustomGradientPanel6.BorderRadius = 15;
+            this.guna2CustomGradientPanel6.Controls.Add(this.dgvRecentRentals);
+            this.guna2CustomGradientPanel6.Controls.Add(this.label6);
+            this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(40, 376);
+            this.guna2CustomGradientPanel6.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
+            this.guna2CustomGradientPanel6.ShadowDecoration.Parent = this.guna2CustomGradientPanel6;
+            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(875, 287);
+            this.guna2CustomGradientPanel6.TabIndex = 6;
+            // 
+            // dgvRecentRentals
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvRecentRentals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvRecentRentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecentRentals.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRecentRentals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRecentRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvRecentRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentRentals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvRecentRentals.ColumnHeadersHeight = 35;
+            this.dgvRecentRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecentRentals.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvRecentRentals.EnableHeadersVisualStyles = false;
+            this.dgvRecentRentals.GridColor = System.Drawing.SystemColors.Window;
+            this.dgvRecentRentals.Location = new System.Drawing.Point(24, 48);
+            this.dgvRecentRentals.Name = "dgvRecentRentals";
+            this.dgvRecentRentals.ReadOnly = true;
+            this.dgvRecentRentals.RowHeadersVisible = false;
+            this.dgvRecentRentals.RowTemplate.Height = 30;
+            this.dgvRecentRentals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRecentRentals.Size = new System.Drawing.Size(823, 211);
+            this.dgvRecentRentals.TabIndex = 7;
+            this.dgvRecentRentals.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvRecentRentals.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRecentRentals.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvRecentRentals.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvRecentRentals.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvRecentRentals.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvRecentRentals.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRecentRentals.ThemeStyle.GridColor = System.Drawing.SystemColors.Window;
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRecentRentals.ThemeStyle.HeaderStyle.Height = 35;
+            this.dgvRecentRentals.ThemeStyle.ReadOnly = true;
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.Height = 30;
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvRecentRentals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(20, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Recent Rentals Transactions";
             // 
             // DashboardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.guna2CustomGradientPanel6);
             this.Controls.Add(this.guna2CustomGradientPanel5);
             this.Controls.Add(this.panelStatsCard);
             this.Controls.Add(this.label1);
@@ -375,6 +468,9 @@
             this.guna2CustomGradientPanel5.ResumeLayout(false);
             this.guna2CustomGradientPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVehicleStatus)).EndInit();
+            this.guna2CustomGradientPanel6.ResumeLayout(false);
+            this.guna2CustomGradientPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentRentals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +499,8 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVehicleStatus;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvRecentRentals;
+        private System.Windows.Forms.Label label6;
     }
 }
