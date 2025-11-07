@@ -16,5 +16,6 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
         {
             InitializeComponent();
         }
+
     }
 }
