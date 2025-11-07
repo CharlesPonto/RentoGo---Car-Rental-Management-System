@@ -9,7 +9,6 @@ namespace RentoGo___Car_Rental_Management_System
     {
         private Guna.UI2.WinForms.Guna2Button currentButton;
 
-        // Cached UserControls (created once, reused later)
         private DashboardControl dashboardControl1;
         private VehiclesControl vehiclesControl1;
         private CustomerControl customerControl1;
@@ -21,7 +20,7 @@ namespace RentoGo___Car_Rental_Management_System
         {
             InitializeComponent();
 
-            // Preload Dashboard (default page)
+            // Preload Dashboard
             dashboardControl1 = new DashboardControl();
             ShowControl(dashboardControl1);
             ActivateButton(btnDashboard);
@@ -100,6 +99,26 @@ namespace RentoGo___Car_Rental_Management_System
 
             ShowControl(returnsControl1);
             ActivateButton(btnReturns);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+             );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+
+                this.Close();
+            }
         }
     }
 }

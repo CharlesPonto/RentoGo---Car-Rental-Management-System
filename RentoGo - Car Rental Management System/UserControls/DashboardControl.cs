@@ -72,7 +72,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             }
         }
 
-        //Vehicle Status Chart
+        //chart
         private void LoadVehicleStatusChart()
         {
             try
@@ -84,7 +84,6 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    // Clear existing points (optional)
                     chartVehicleStatus.Series["VehicleStatus"].Points.Clear();
 
                     while (reader.Read())
@@ -104,7 +103,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             }
         }
 
-        //Recent Rentals Table
+        //rental log table
         private void LoadRecentRentals()
         {
             try

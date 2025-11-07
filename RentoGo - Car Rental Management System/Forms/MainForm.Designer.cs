@@ -88,6 +88,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(36, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnReturns
             // 
@@ -273,7 +274,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentoGo___Car_Rental_Management_System.Properties.Resources.LogoV3;
-            this.pictureBox1.Location = new System.Drawing.Point(28, -22);
+            this.pictureBox1.Location = new System.Drawing.Point(28, -9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(162, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
