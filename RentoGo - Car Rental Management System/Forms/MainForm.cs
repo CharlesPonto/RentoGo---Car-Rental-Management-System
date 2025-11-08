@@ -20,7 +20,7 @@ namespace RentoGo___Car_Rental_Management_System
         {
             InitializeComponent();
 
-            // Preload Dashboard
+            // preload dashbaord
             dashboardControl1 = new DashboardControl();
             ShowControl(dashboardControl1);
             ActivateButton(btnDashboard);

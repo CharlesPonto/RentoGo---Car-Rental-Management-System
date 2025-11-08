@@ -77,7 +77,7 @@ namespace RentoGo___Car_Rental_Management_System
                         MessageBox.Show($"Welcome {fullName}!", "Login Successful",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Open Main Form
+                        // open main form
                         MainForm main = new MainForm();
                         this.Hide();
                         main.ShowDialog();

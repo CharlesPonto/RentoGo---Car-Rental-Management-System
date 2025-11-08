@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditVehicleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditVehicleForm.Designer.cs">
+      <DependentUpon>AddEditVehicleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="UserControls\VehiclesControl.Designer.cs">
       <DependentUpon>VehiclesControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddEditVehicleForm.resx">
+      <DependentUpon>AddEditVehicleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
