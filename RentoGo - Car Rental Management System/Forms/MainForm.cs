@@ -44,7 +44,6 @@ namespace RentoGo___Car_Rental_Management_System
             currentButton = button;
             //currentButton.FillColor = Color.FromArgb(223, 245, 228); 
             currentButton.FillColor = Color.FromArgb(224, 224, 224); 
-            //urrentButton.FillColor = Color.FromArgb(255, 192, 128); 
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
