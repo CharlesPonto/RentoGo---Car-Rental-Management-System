@@ -14,7 +14,8 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
 {
     public partial class DashboardControl : UserControl
     {
-        private string connectionString = @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
+        //private string connectionString = @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=RentoGoDB;Trusted_Connection=True;";
 
         public DashboardControl()
         {

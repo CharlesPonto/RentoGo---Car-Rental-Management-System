@@ -8,7 +8,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
     {
         private int vehicleId = 0;
         private readonly string connectionString =
-            @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
+            @"Server=(localdb)\MSSQLLocalDB;Database=RentoGoDB;Trusted_Connection=True;";
 
         public AddEditVehicleForm()
         {
@@ -34,17 +34,18 @@ namespace RentoGo___Car_Rental_Management_System.Forms
 
             if (vehicleId > 0)
             {
-                Text = "edit vehicle";
-                btnSave.Text = "save changes";
+                lblTitle.Text = "Edit Vehicle";
+                btnSave.Text = "Save";
                 loadVehicle();
             }
             else
             {
-                Text = "add vehicle";
-                btnSave.Text = "add vehicle";
+                lblTitle.Text = "Add Vehicle";
+                btnSave.Text = "Add";
             }
         }
 
+        // load
         private void loadVehicle()
         {
             try
@@ -70,8 +71,8 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error loading vehicle:\n" + ex.Message,
-                    "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading vehicle details:\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,26 +82,30 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             string error = "";
 
             if (string.IsNullOrWhiteSpace(txtModel.Text))
-                error += "model is required.\n";
+                error += "Model is required.\n";
 
             if (string.IsNullOrWhiteSpace(txtType.Text))
-                error += "type is required.\n";
+                error += "Type is required.\n";
 
             if (string.IsNullOrWhiteSpace(txtPlateNo.Text))
-                error += "plate number is required.\n";
+                error += "Plate number is required.\n";
 
             if (string.IsNullOrWhiteSpace(txtRate.Text))
-                error += "rate per day is required.\n";
-            else if (!decimal.TryParse(txtRate.Text, out _))
-                error += "rate per day must be a valid number.\n";
+                error += "Rate per day is required.\n";
+            else if (!decimal.TryParse(txtRate.Text, out decimal rate))
+                error += "Rate per day must be a valid number.\n";
+            else if (rate <= 0)
+                error += "Rate per day must be greater than zero.\n";
+            else if (rate < 200 || rate > 20000)
+                error += "Rate per day seems unrealistic. Please double-check.\n";
 
             if (cbStatus.SelectedItem == null)
-                error += "please select a vehicle status.\n";
+                error += "Please select a vehicle status.\n";
 
             if (!string.IsNullOrEmpty(error))
             {
-                MessageBox.Show("please fix the following:\n\n" + error,
-                    "validation error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fix the following:\n\n" + error,
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -118,6 +123,21 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+
+                    // check for duplicate plate numbers
+                    SqlCommand checkCmd = new SqlCommand(
+                        "SELECT COUNT(*) FROM Vehicles WHERE PlateNo = @plate AND VehicleID != @id", con);
+                    checkCmd.Parameters.AddWithValue("@plate", txtPlateNo.Text.Trim());
+                    checkCmd.Parameters.AddWithValue("@id", vehicleId);
+                    int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (exists > 0)
+                    {
+                        MessageBox.Show("A vehicle with this plate number already exists.",
+                            "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     SqlCommand cmd;
 
                     if (vehicleId == 0)
@@ -143,26 +163,46 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     cmd.Parameters.AddWithValue("@plate", txtPlateNo.Text.Trim());
                     cmd.Parameters.AddWithValue("@rate", decimal.Parse(txtRate.Text.Trim()));
                     cmd.Parameters.AddWithValue("@status", cbStatus.SelectedItem.ToString());
+
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show(vehicleId == 0
-                        ? "vehicle added successfully."
-                        : "vehicle updated successfully.",
-                        "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ? "Vehicle added successfully."
+                        : "Vehicle updated successfully.",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Close();
+                    this.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("PRIMARY KEY") || ex.Message.Contains("UNIQUE"))
+                {
+                    MessageBox.Show("A vehicle with this plate number already exists.",
+                        "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Database connection error:\n" + ex.Message,
+                        "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error saving vehicle:\n" + ex.Message,
-                    "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Unexpected error:\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // cancel
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

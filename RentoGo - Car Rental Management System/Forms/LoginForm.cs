@@ -13,7 +13,8 @@ namespace RentoGo___Car_Rental_Management_System
 {
     public partial class LoginForm : Form
     {
-        string connectionString = @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
+        //string connectionString = @"Server=LAPTOP-8NVU0AIF\SQLEXPRESS;Database=RentoGoDB;Trusted_Connection=True;";
+        string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=RentoGoDB;Trusted_Connection=True;";
 
         public LoginForm()
         {
