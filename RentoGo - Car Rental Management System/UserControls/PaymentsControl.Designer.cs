@@ -49,9 +49,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaymentsControl";
-            this.Size = new System.Drawing.Size(1285, 875);
+            this.Size = new System.Drawing.Size(1407, 875);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,6 +66,12 @@
     <Compile Include="Forms\AddEditCustomerForm.Designer.cs">
       <DependentUpon>AddEditCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEditRentalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditRentalForm.Designer.cs">
+      <DependentUpon>AddEditRentalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditVehicleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReturnForm.Designer.cs">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
