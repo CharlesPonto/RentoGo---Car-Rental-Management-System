@@ -195,7 +195,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(420, 396);
+            this.btnCancel.Location = new System.Drawing.Point(580, 372);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
@@ -213,7 +213,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(191, 396);
+            this.btnSave.Location = new System.Drawing.Point(353, 372);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
@@ -406,7 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 467);
+            this.ClientSize = new System.Drawing.Size(835, 448);
             this.Controls.Add(this.txtVehicleID);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.dtEnd);
