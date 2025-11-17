@@ -50,11 +50,11 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
 
-        private decimal revenue(SqlConnection con)
-        {
-            SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(TotalCharge),0) FROM Rentals WHERE Status='Completed'", con);
-            return Convert.ToDecimal(cmd.ExecuteScalar());
-        }
+        //private decimal revenue(SqlConnection con)
+        //{
+        //    SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(TotalCharge),0) FROM Rentals WHERE Status='Completed'", con);
+        //    return Convert.ToDecimal(cmd.ExecuteScalar());
+        //}
 
         // load
         private void load(string search = "", string status = "")
@@ -304,6 +304,19 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 load();
             }
             catch { }
+        }
+
+        private void btnAddRental_Click(object sender, EventArgs e)
+        {
+            using (AddEditRentalForm addForm = new AddEditRentalForm())
+            {
+                addForm.FormClosed += (s, args) =>
+                {
+                    summary();  
+                    load();
+                };
+                addForm.ShowDialog();
+            }
         }
     }
 }

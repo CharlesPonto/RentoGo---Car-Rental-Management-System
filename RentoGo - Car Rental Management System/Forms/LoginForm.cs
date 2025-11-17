@@ -63,7 +63,7 @@ namespace RentoGo___Car_Rental_Management_System
                 {
                     con.Open();
 
-                    string query = "SELECT FullName, Role FROM Users WHERE Username=@username AND PasswordHash=@password";
+                    string query = "SELECT FullName, Role FROM Users WHERE Username=@username AND Password=@password";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);

@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblCompleted = new System.Windows.Forms.Label();
+            this.cbStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblReserved = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -44,7 +45,7 @@
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnAddRental = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CustomGradientPanel6.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -67,13 +68,14 @@
             // guna2CustomGradientPanel6
             // 
             this.guna2CustomGradientPanel6.BorderRadius = 15;
+            this.guna2CustomGradientPanel6.Controls.Add(this.btnAddRental);
             this.guna2CustomGradientPanel6.Controls.Add(this.guna2CustomGradientPanel3);
             this.guna2CustomGradientPanel6.Controls.Add(this.cbStatusFilter);
             this.guna2CustomGradientPanel6.Controls.Add(this.guna2CustomGradientPanel1);
-            this.guna2CustomGradientPanel6.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel6.Controls.Add(this.dgvRentals);
             this.guna2CustomGradientPanel6.Controls.Add(this.btnSearch);
             this.guna2CustomGradientPanel6.Controls.Add(this.txtSearch);
+            this.guna2CustomGradientPanel6.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(51, 126);
             this.guna2CustomGradientPanel6.Margin = new System.Windows.Forms.Padding(5);
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
@@ -90,10 +92,10 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(368, 24);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(945, 26);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             this.guna2CustomGradientPanel3.ShadowDecoration.Parent = this.guna2CustomGradientPanel3;
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(158, 51);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(140, 38);
             this.guna2CustomGradientPanel3.TabIndex = 11;
             // 
             // lblCompleted
@@ -101,12 +103,31 @@
             this.lblCompleted.AutoSize = true;
             this.lblCompleted.BackColor = System.Drawing.Color.Transparent;
             this.lblCompleted.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompleted.Location = new System.Drawing.Point(15, 13);
+            this.lblCompleted.Location = new System.Drawing.Point(0, 9);
             this.lblCompleted.Name = "lblCompleted";
             this.lblCompleted.Size = new System.Drawing.Size(130, 25);
             this.lblCompleted.TabIndex = 0;
             this.lblCompleted.Text = "Completed: 12";
             this.lblCompleted.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbStatusFilter
+            // 
+            this.cbStatusFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatusFilter.FocusedColor = System.Drawing.Color.Empty;
+            this.cbStatusFilter.FocusedState.Parent = this.cbStatusFilter;
+            this.cbStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbStatusFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbStatusFilter.FormattingEnabled = true;
+            this.cbStatusFilter.HoverState.Parent = this.cbStatusFilter;
+            this.cbStatusFilter.ItemHeight = 28;
+            this.cbStatusFilter.ItemsAppearance.Parent = this.cbStatusFilter;
+            this.cbStatusFilter.Location = new System.Drawing.Point(286, 26);
+            this.cbStatusFilter.Name = "cbStatusFilter";
+            this.cbStatusFilter.ShadowDecoration.Parent = this.cbStatusFilter;
+            this.cbStatusFilter.Size = new System.Drawing.Size(139, 34);
+            this.cbStatusFilter.TabIndex = 11;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -117,10 +138,10 @@
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(204, 24);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(799, 26);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(149, 51);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(140, 38);
             this.guna2CustomGradientPanel1.TabIndex = 11;
             // 
             // lblReserved
@@ -128,7 +149,7 @@
             this.lblReserved.AutoSize = true;
             this.lblReserved.BackColor = System.Drawing.Color.Transparent;
             this.lblReserved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReserved.Location = new System.Drawing.Point(15, 13);
+            this.lblReserved.Location = new System.Drawing.Point(3, 9);
             this.lblReserved.Name = "lblReserved";
             this.lblReserved.Size = new System.Drawing.Size(108, 25);
             this.lblReserved.TabIndex = 0;
@@ -144,10 +165,10 @@
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(39, 24);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(653, 26);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(149, 51);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(140, 38);
             this.guna2CustomGradientPanel2.TabIndex = 10;
             // 
             // lblActive
@@ -155,7 +176,7 @@
             this.lblActive.AutoSize = true;
             this.lblActive.BackColor = System.Drawing.Color.Transparent;
             this.lblActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActive.Location = new System.Drawing.Point(15, 13);
+            this.lblActive.Location = new System.Drawing.Point(3, 9);
             this.lblActive.Name = "lblActive";
             this.lblActive.Size = new System.Drawing.Size(82, 25);
             this.lblActive.TabIndex = 0;
@@ -165,45 +186,45 @@
             // dgvRentals
             // 
             this.dgvRentals.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dgvRentals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvRentals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRentals.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRentals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRentals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRentals.ColumnHeadersHeight = 40;
             this.dgvRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRentals.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRentals.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRentals.EnableHeadersVisualStyles = false;
             this.dgvRentals.GridColor = System.Drawing.SystemColors.Window;
-            this.dgvRentals.Location = new System.Drawing.Point(39, 95);
+            this.dgvRentals.Location = new System.Drawing.Point(39, 82);
             this.dgvRentals.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRentals.Name = "dgvRentals";
             this.dgvRentals.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRentals.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRentals.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRentals.RowHeadersVisible = false;
             this.dgvRentals.RowHeadersWidth = 51;
             this.dgvRentals.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,7 +232,7 @@
             this.dgvRentals.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvRentals.RowTemplate.Height = 35;
             this.dgvRentals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRentals.Size = new System.Drawing.Size(1207, 588);
+            this.dgvRentals.Size = new System.Drawing.Size(1207, 601);
             this.dgvRentals.TabIndex = 7;
             this.dgvRentals.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvRentals.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -246,7 +267,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(1113, 37);
+            this.btnSearch.Location = new System.Drawing.Point(432, 26);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
@@ -269,7 +290,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.Location = new System.Drawing.Point(866, 37);
+            this.txtSearch.Location = new System.Drawing.Point(39, 26);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -298,24 +319,24 @@
             this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
             this.guna2ComboBox1.TabIndex = 10;
             // 
-            // cbStatusFilter
+            // btnAddRental
             // 
-            this.cbStatusFilter.BackColor = System.Drawing.Color.Transparent;
-            this.cbStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatusFilter.FocusedColor = System.Drawing.Color.Empty;
-            this.cbStatusFilter.FocusedState.Parent = this.cbStatusFilter;
-            this.cbStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbStatusFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbStatusFilter.FormattingEnabled = true;
-            this.cbStatusFilter.HoverState.Parent = this.cbStatusFilter;
-            this.cbStatusFilter.ItemHeight = 30;
-            this.cbStatusFilter.ItemsAppearance.Parent = this.cbStatusFilter;
-            this.cbStatusFilter.Location = new System.Drawing.Point(719, 39);
-            this.cbStatusFilter.Name = "cbStatusFilter";
-            this.cbStatusFilter.ShadowDecoration.Parent = this.cbStatusFilter;
-            this.cbStatusFilter.Size = new System.Drawing.Size(139, 36);
-            this.cbStatusFilter.TabIndex = 11;
+            this.btnAddRental.BorderRadius = 4;
+            this.btnAddRental.CheckedState.Parent = this.btnAddRental;
+            this.btnAddRental.CustomImages.Parent = this.btnAddRental;
+            this.btnAddRental.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddRental.FillColor2 = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddRental.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddRental.ForeColor = System.Drawing.Color.White;
+            this.btnAddRental.HoverState.Parent = this.btnAddRental;
+            this.btnAddRental.Location = new System.Drawing.Point(1097, 26);
+            this.btnAddRental.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRental.Name = "btnAddRental";
+            this.btnAddRental.ShadowDecoration.Parent = this.btnAddRental;
+            this.btnAddRental.Size = new System.Drawing.Size(149, 38);
+            this.btnAddRental.TabIndex = 12;
+            this.btnAddRental.Text = "+ Add Rental";
+            this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
             // 
             // RentalsControl
             // 
@@ -357,5 +378,6 @@
         private System.Windows.Forms.Label lblReserved;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2ComboBox cbStatusFilter;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAddRental;
     }
 }
