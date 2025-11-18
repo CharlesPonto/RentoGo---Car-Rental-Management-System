@@ -1,0 +1,154 @@
+﻿-- ============================================================
+-- 🚗 RentoGo Car Rental Management System Database
+-- ============================================================
+
+-- 1️⃣ Create Database
+CREATE DATABASE RentoGoDB;
+GO
+
+USE RentoGoDB;
+GO
+
+-- ============================================================
+-- 2️⃣ USERS TABLE
+-- ============================================================
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(100) NOT NULL UNIQUE,
+    Password NVARCHAR(255) NOT NULL,
+    FullName NVARCHAR(200),
+    Role NVARCHAR(50) DEFAULT 'Staff',
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 3️⃣ VEHICLES TABLE
+-- ============================================================
+CREATE TABLE Vehicles (
+    VehicleID INT IDENTITY(1,1) PRIMARY KEY,
+    Model NVARCHAR(100) NOT NULL,
+    Type NVARCHAR(50),
+    PlateNo NVARCHAR(50) NOT NULL UNIQUE,
+    RatePerDay DECIMAL(18,2) NOT NULL DEFAULT 0,
+    Status NVARCHAR(50) NOT NULL DEFAULT 'Available', -- Available, Reserved, Rented, Maintenance
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 4️⃣ CUSTOMERS TABLE
+-- ============================================================
+CREATE TABLE Customers (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    FullName NVARCHAR(200) NOT NULL,
+    Contact NVARCHAR(50),
+    Address NVARCHAR(300),
+    LicenseNo NVARCHAR(50),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 5️⃣ RENTALS TABLE
+-- ============================================================
+CREATE TABLE Rentals (
+    RentalID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL FOREIGN KEY REFERENCES Customers(CustomerID),
+    VehicleID INT NOT NULL FOREIGN KEY REFERENCES Vehicles(VehicleID),
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    Status NVARCHAR(50) NOT NULL, -- Reserved, Active, Completed, Cancelled
+    Amount DECIMAL(18,2) NULL,
+    AmountPaid DECIMAL(18,2) NULL DEFAULT 0,
+    LateFee DECIMAL(18,2) NULL DEFAULT 0,
+    DamageFee DECIMAL(18,2) NULL DEFAULT 0,
+    TotalCharge DECIMAL(18,2) NULL,
+    ReturnDate DATE NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 6️⃣ PAYMENTS TABLE
+-- ============================================================
+CREATE TABLE Payments (
+    PaymentID INT IDENTITY(1,1) PRIMARY KEY,
+    RentalID INT NOT NULL FOREIGN KEY REFERENCES Rentals(RentalID),
+    Amount DECIMAL(18,2) NOT NULL,
+    PaymentDate DATETIME NOT NULL DEFAULT GETDATE(),
+    Type NVARCHAR(50) NULL  -- Full / Partial / BookingDeposit
+);
+GO
+
+-- ============================================================
+-- 7️⃣ RETURNS TABLE
+-- ============================================================
+CREATE TABLE Returns (
+    ReturnID INT IDENTITY(1,1) PRIMARY KEY,
+    RentalID INT NOT NULL FOREIGN KEY REFERENCES Rentals(RentalID),
+    ReturnDate DATETIME NOT NULL,
+    LateFee DECIMAL(18,2) NULL,
+    DamageFee DECIMAL(18,2) NULL,
+    ProcessedBy INT NULL FOREIGN KEY REFERENCES Users(UserID),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 8️⃣ HELPFUL INDEXES (Improves query performance)
+-- ============================================================
+CREATE INDEX IDX_Rentals_VehicleDate ON Rentals(VehicleID, StartDate, EndDate);
+CREATE INDEX IDX_Vehicles_Status ON Vehicles(Status);
+GO
+
+-- ============================================================
+-- 9️⃣ SAMPLE DATA (for testing dashboard and forms)
+-- ============================================================
+
+-- 👤 Users
+INSERT INTO Users (Username, Password, FullName, Role)
+VALUES 
+('admin', 'admin123', 'System Administrator', 'Admin'),
+('staff1', 'password123', 'Front Desk Staff', 'Staff');
+
+-- 🚗 Vehicles
+INSERT INTO Vehicles (Model, Type, PlateNo, RatePerDay, Status)
+VALUES
+('Toyota Vios', 'Sedan', 'ABC-123', 1500, 'Available'),
+('Honda City', 'Sedan', 'XYZ-456', 1600, 'Available'),
+('Mitsubishi Montero', 'SUV', 'DEF-789', 2500, 'Maintenance'),
+('Nissan Almera', 'Sedan', 'JKL-321', 1700, 'Rented');
+
+-- 👥 Customers
+INSERT INTO Customers (FullName, Contact, Address, LicenseNo)
+VALUES
+('John Doe', '09171234567', 'Cebu City', 'L1234567'),
+('Jane Smith', '09181234567', 'Davao City', 'L7654321'),
+('Carlos Reyes', '09281230001', 'Tagum City', 'L9123456');
+
+-- 🧾 Rentals
+INSERT INTO Rentals (CustomerID, VehicleID, StartDate, EndDate, Status, Amount, AmountPaid, TotalCharge)
+VALUES
+(1, 1, '2025-11-10', '2025-11-12', 'Reserved', 3000, 1500, 3000),
+(2, 2, '2025-11-05', '2025-11-08', 'Completed', 4800, 4800, 4800),
+(3, 4, '2025-11-06', '2025-11-09', 'Active', 5100, 2000, 5100);
+
+-- 💳 Payments
+INSERT INTO Payments (RentalID, Amount, Type)
+VALUES
+(1, 1500, 'Partial'),
+(2, 4800, 'Full'),
+(3, 2000, 'Partial');
+
+-- 🔁 Returns
+INSERT INTO Returns (RentalID, ReturnDate, LateFee, DamageFee, ProcessedBy)
+VALUES
+(2, '2025-11-08', 0, 0, 1);
+GO
+
+-- ============================================================
+-- ✅ DATABASE READY
+-- ============================================================
+PRINT '✅ RentoGoDB created successfully with sample data!';
+GO
