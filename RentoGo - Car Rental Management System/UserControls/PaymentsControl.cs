@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using RentoGo___Car_Rental_Management_System.Forms;
 using System.Windows.Forms;
 
 namespace RentoGo___Car_Rental_Management_System.UserControls
@@ -22,7 +23,6 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             loadPayments();
         }
 
-        // load
         private void loadPayments(string search = "")
         {
             try
@@ -39,14 +39,12 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                             v.Model AS Vehicle,
                             p.PaymentDate,
                             p.Amount,
-                            p.Method,
-                            p.Remarks
+                            p.Type
                         FROM Payments p
                         JOIN Rentals r ON p.RentalID = r.RentalID
                         JOIN Customers c ON r.CustomerID = c.CustomerID
                         JOIN Vehicles v ON r.VehicleID = v.VehicleID
-                        WHERE 
-                            (@search = '' OR c.FullName LIKE @search OR v.Model LIKE @search)
+                        WHERE (@search = '' OR c.FullName LIKE @search OR v.Model LIKE @search)
                         ORDER BY p.PaymentDate DESC";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, con);
@@ -57,45 +55,33 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                     dgvPayments.DataSource = dt;
                 }
 
-                // remove selection
                 dgvPayments.ClearSelection();
                 dgvPayments.CurrentCell = null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading payments:\n" + ex.Message,
-                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading payments:\n" + ex.Message);
             }
         }
 
-        // grid
         private void configureGrid()
         {
             dgvPayments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPayments.RowHeadersVisible = false;
-            dgvPayments.AllowUserToAddRows = false;
             dgvPayments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPayments.MultiSelect = false;
-
-            dgvPayments.BorderStyle = BorderStyle.None;
-            dgvPayments.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvPayments.GridColor = Color.FromArgb(223, 245, 228);
-
-            dgvPayments.EnableHeadersVisualStyles = false;
-            dgvPayments.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(223, 245, 228);
-            dgvPayments.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
-            dgvPayments.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 11);
-
-            dgvPayments.DefaultCellStyle.Font = new Font("Segoe UI", 9);
-            dgvPayments.DefaultCellStyle.SelectionBackColor = Color.White;
-            dgvPayments.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvPayments.AllowUserToAddRows = false;
         }
 
-        // search
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string term = txtSearch.Text.Trim();
-            loadPayments(term);
+            loadPayments(txtSearch.Text.Trim());
+        }
+
+        private void btnAddPayment_Click(object sender, EventArgs e)
+        {
+            AddPaymentForm form = new AddPaymentForm();
+            if (form.ShowDialog() == DialogResult.OK)
+                loadPayments();
         }
     }
 }

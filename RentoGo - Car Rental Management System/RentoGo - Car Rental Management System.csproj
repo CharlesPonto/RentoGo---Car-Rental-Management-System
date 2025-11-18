@@ -78,6 +78,12 @@
     <Compile Include="Forms\AddEditVehicleForm.Designer.cs">
       <DependentUpon>AddEditVehicleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPaymentForm.Designer.cs">
+      <DependentUpon>AddPaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditVehicleForm.resx">
       <DependentUpon>AddEditVehicleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddPaymentForm.resx">
+      <DependentUpon>AddPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

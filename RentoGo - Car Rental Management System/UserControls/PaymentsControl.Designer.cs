@@ -37,6 +37,7 @@
             this.dgvPayments = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAddPayment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CustomGradientPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
             this.SuspendLayout();
@@ -49,13 +50,14 @@
             this.label1.Location = new System.Drawing.Point(43, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 46);
+            this.label1.Size = new System.Drawing.Size(285, 46);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Vehicle Records";
+            this.label1.Text = "Payments Record";
             // 
             // guna2CustomGradientPanel6
             // 
             this.guna2CustomGradientPanel6.BorderRadius = 15;
+            this.guna2CustomGradientPanel6.Controls.Add(this.btnAddPayment);
             this.guna2CustomGradientPanel6.Controls.Add(this.dgvPayments);
             this.guna2CustomGradientPanel6.Controls.Add(this.btnSearch);
             this.guna2CustomGradientPanel6.Controls.Add(this.txtSearch);
@@ -156,6 +158,7 @@
             this.btnSearch.Size = new System.Drawing.Size(133, 38);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -182,6 +185,25 @@
             this.txtSearch.Size = new System.Drawing.Size(238, 38);
             this.txtSearch.TabIndex = 8;
             // 
+            // btnAddPayment
+            // 
+            this.btnAddPayment.BorderRadius = 4;
+            this.btnAddPayment.CheckedState.Parent = this.btnAddPayment;
+            this.btnAddPayment.CustomImages.Parent = this.btnAddPayment;
+            this.btnAddPayment.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddPayment.FillColor2 = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddPayment.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddPayment.ForeColor = System.Drawing.Color.White;
+            this.btnAddPayment.HoverState.Parent = this.btnAddPayment;
+            this.btnAddPayment.Location = new System.Drawing.Point(1081, 24);
+            this.btnAddPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddPayment.Name = "btnAddPayment";
+            this.btnAddPayment.ShadowDecoration.Parent = this.btnAddPayment;
+            this.btnAddPayment.Size = new System.Drawing.Size(165, 38);
+            this.btnAddPayment.TabIndex = 12;
+            this.btnAddPayment.Text = "+ Add Payment";
+            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
+            // 
             // PaymentsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,5 +229,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvPayments;
         private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAddPayment;
     }
 }
