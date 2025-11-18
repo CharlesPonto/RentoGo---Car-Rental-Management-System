@@ -215,16 +215,16 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     if (rentalId == 0)
                     {
                         cmd = new SqlCommand(@"
-                            INSERT INTO Rentals (CustomerID, VehicleID, StartDate, EndDate, TotalCharge, Status)
-                            VALUES (@c, @v, @s, @e, @t, 'Reserved')", con);
+                    INSERT INTO Rentals (CustomerID, VehicleID, StartDate, EndDate, TotalCharge, Status)
+                    VALUES (@c, @v, @s, @e, @t, 'Reserved')", con);
                     }
                     else
                     {
                         cmd = new SqlCommand(@"
-                            UPDATE Rentals SET 
-                                CustomerID=@c, VehicleID=@v, StartDate=@s, EndDate=@e, 
-                                TotalCharge=@t, Status=@st
-                            WHERE RentalID = @id", con);
+                    UPDATE Rentals SET 
+                        CustomerID=@c, VehicleID=@v, StartDate=@s, EndDate=@e, 
+                        TotalCharge=@t, Status=@st
+                    WHERE RentalID = @id", con);
 
                         cmd.Parameters.AddWithValue("@id", rentalId);
                         cmd.Parameters.AddWithValue("@st", cbStatus.SelectedItem.ToString());
@@ -237,6 +237,25 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     cmd.Parameters.AddWithValue("@t", decimal.Parse(txtTotal.Text));
 
                     cmd.ExecuteNonQuery();
+
+                    // Automatically update vehicle status based on rental status
+                    string rentalStatus = rentalId == 0 ? "Reserved" : cbStatus.SelectedItem.ToString();
+                    string vehicleStatus;
+                    if (rentalStatus == "Active")
+                        vehicleStatus = "Rented";
+                    else if (rentalStatus == "Reserved")
+                        vehicleStatus = "Reserved";
+                    else // Completed or Cancelled
+                        vehicleStatus = "Available";
+
+                    SqlCommand updateVehicle = new SqlCommand(
+                        "UPDATE Vehicles SET Status = @status WHERE VehicleID = @vid", con);
+                    updateVehicle.Parameters.AddWithValue("@status", vehicleStatus);
+                    updateVehicle.Parameters.AddWithValue("@vid", int.Parse(txtVehicleID.Text));
+                    updateVehicle.ExecuteNonQuery();
+
+                    // notif other controls to refresh
+                    AppEvents.RaiseVehiclesUpdated();
                 }
 
                 MessageBox.Show(

@@ -23,7 +23,9 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             {
                 configureGrid();
                 loadVehicles();
+                cbStatusFilter.Items.AddRange(new string[] { "All", "Available", "Reserved", "Rented" });
                 cbStatusFilter.SelectedIndex = 0;
+                AppEvents.VehiclesUpdated += () => loadVehicles();
             }
             catch (Exception ex)
             {

@@ -23,6 +23,12 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             summary();
             load();
             statusFilter();
+
+            AppEvents.RentalsUpdated += () =>
+            {
+                summary();
+                load();
+            };
         }
 
         // summary

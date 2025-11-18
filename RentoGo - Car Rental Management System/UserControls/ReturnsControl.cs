@@ -20,7 +20,12 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
         {
             configureGrid();
             loadReturns();
-        }
+
+            AppEvents.RentalsUpdated += () =>
+            {
+                loadReturns();
+            };
+            }
 
         // load
         private void loadReturns(string search = "")

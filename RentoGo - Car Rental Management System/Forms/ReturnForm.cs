@@ -91,7 +91,21 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             decimal lateFee = overdueDays * dailyRate;
             txtLateFee.Text = lateFee.ToString("0.00");
 
-            decimal finalTotal = originalTotal + lateFee + damage;
+            // Calculate total before payments
+            decimal totalBeforePayments = originalTotal + lateFee + damage;
+
+            // Get total payments made
+            decimal totalPayments = getTotalPayments();
+
+            // Show payments made (if you add txtPaymentsMade field)
+            // txtPaymentsMade.Text = totalPayments.ToString("0.00");
+
+            // Calculate final amount due
+            decimal finalTotal = totalBeforePayments - totalPayments;
+
+            // Ensure final total is not negative
+            if (finalTotal < 0) finalTotal = 0;
+
             txtFinalTotal.Text = finalTotal.ToString("0.00");
         }
 
@@ -107,30 +121,48 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             return true;
         }
 
-        // save
-        private void btnSave_Click(object sender, EventArgs e)
+        private decimal getTotalPayments()
         {
-            if (!validateFields()) return;
-
+            decimal totalPayments = 0;
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    string query = "SELECT ISNULL(SUM(Amount), 0) FROM Payments WHERE RentalID = @id";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@id", rentalId);
+                    totalPayments = Convert.ToDecimal(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error calculating payments: " + ex.Message);
+            }
+            return totalPayments;
+        }
 
+        // save
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!validateFields()) return;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
                     decimal lateFee = decimal.Parse(txtLateFee.Text);
                     decimal damageFee = decimal.Parse(txtDamageFee.Text);
                     decimal finalTotal = decimal.Parse(txtFinalTotal.Text);
 
                     // update Rentals
                     string updateRental = @"
-                        UPDATE Rentals SET 
-                            LateFee=@late, DamageFee=@damage,
-                            TotalCharge=@total, 
-                            ReturnDate=@return,
-                            Status='Completed'
-                        WHERE RentalID = @id";
-
+                UPDATE Rentals SET
+                     LateFee=@late, DamageFee=@damage,
+                    TotalCharge=@total,
+                     ReturnDate=@return,
+                    Status='Completed'
+                WHERE RentalID = @id";
                     SqlCommand cmd1 = new SqlCommand(updateRental, con);
                     cmd1.Parameters.AddWithValue("@late", lateFee);
                     cmd1.Parameters.AddWithValue("@damage", damageFee);
@@ -141,13 +173,15 @@ namespace RentoGo___Car_Rental_Management_System.Forms
 
                     // set vehicle available
                     SqlCommand cmd2 = new SqlCommand(@"
-                        UPDATE Vehicles 
-                        SET Status='Available'
-                        WHERE VehicleID = (SELECT VehicleID FROM Rentals WHERE RentalID=@id)", con);
-
+                UPDATE Vehicles 
+                SET Status='Available'
+                WHERE VehicleID = (SELECT VehicleID FROM Rentals WHERE RentalID=@id)", con);
                     cmd2.Parameters.AddWithValue("@id", rentalId);
                     cmd2.ExecuteNonQuery();
                 }
+
+                // Trigger the event to update all related controls
+                AppEvents.RaiseRentalsUpdated();
 
                 MessageBox.Show("Vehicle returned successfully.", "success");
                 Close();

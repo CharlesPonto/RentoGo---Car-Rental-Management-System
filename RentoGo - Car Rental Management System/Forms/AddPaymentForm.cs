@@ -116,6 +116,8 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     trans.Commit();
                 }
 
+                AppEvents.RaiseRentalsUpdated();
+
                 MessageBox.Show("Payment recorded successfully.", "Success");
                 DialogResult = DialogResult.OK;
                 Close();
