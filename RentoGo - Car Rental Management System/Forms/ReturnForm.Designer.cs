@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblCustomerID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -53,6 +51,8 @@
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
             this.dtReturn = new System.Windows.Forms.DateTimePicker();
+            this.txtCustomer = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel2
@@ -67,32 +67,6 @@
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(379, 30);
             this.guna2HtmlLabel2.TabIndex = 36;
             this.guna2HtmlLabel2.Text = "Rental Details";
-            // 
-            // txtCustomer
-            // 
-            this.txtCustomer.BorderRadius = 6;
-            this.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomer.DefaultText = "";
-            this.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomer.DisabledState.Parent = this.txtCustomer;
-            this.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomer.FocusedState.Parent = this.txtCustomer;
-            this.txtCustomer.ForeColor = System.Drawing.Color.Black;
-            this.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomer.HoverState.Parent = this.txtCustomer;
-            this.txtCustomer.Location = new System.Drawing.Point(28, 175);
-            this.txtCustomer.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.PasswordChar = '\0';
-            this.txtCustomer.PlaceholderText = "";
-            this.txtCustomer.ReadOnly = true;
-            this.txtCustomer.SelectedText = "";
-            this.txtCustomer.ShadowDecoration.Parent = this.txtCustomer;
-            this.txtCustomer.Size = new System.Drawing.Size(260, 48);
-            this.txtCustomer.TabIndex = 32;
             // 
             // lblCustomerID
             // 
@@ -118,32 +92,6 @@
             this.lblTitle.Size = new System.Drawing.Size(348, 46);
             this.lblTitle.TabIndex = 31;
             this.lblTitle.Text = "Return Vehicle Rental";
-            // 
-            // txtVehicle
-            // 
-            this.txtVehicle.BorderRadius = 6;
-            this.txtVehicle.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtVehicle.DefaultText = "";
-            this.txtVehicle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVehicle.DisabledState.Parent = this.txtVehicle;
-            this.txtVehicle.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVehicle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVehicle.FocusedState.Parent = this.txtVehicle;
-            this.txtVehicle.ForeColor = System.Drawing.Color.Black;
-            this.txtVehicle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVehicle.HoverState.Parent = this.txtVehicle;
-            this.txtVehicle.Location = new System.Drawing.Point(28, 261);
-            this.txtVehicle.Margin = new System.Windows.Forms.Padding(5);
-            this.txtVehicle.Name = "txtVehicle";
-            this.txtVehicle.PasswordChar = '\0';
-            this.txtVehicle.PlaceholderText = "";
-            this.txtVehicle.ReadOnly = true;
-            this.txtVehicle.SelectedText = "";
-            this.txtVehicle.ShadowDecoration.Parent = this.txtVehicle;
-            this.txtVehicle.Size = new System.Drawing.Size(260, 48);
-            this.txtVehicle.TabIndex = 37;
             // 
             // guna2HtmlLabel1
             // 
@@ -438,7 +386,7 @@
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(208, 46);
             this.btnSave.TabIndex = 56;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Pay";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dtStart
@@ -466,6 +414,58 @@
             this.dtReturn.Name = "dtReturn";
             this.dtReturn.Size = new System.Drawing.Size(260, 22);
             this.dtReturn.TabIndex = 60;
+            // 
+            // txtCustomer
+            // 
+            this.txtCustomer.BorderRadius = 6;
+            this.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomer.DefaultText = "";
+            this.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomer.DisabledState.Parent = this.txtCustomer;
+            this.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomer.FocusedState.Parent = this.txtCustomer;
+            this.txtCustomer.ForeColor = System.Drawing.Color.Black;
+            this.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomer.HoverState.Parent = this.txtCustomer;
+            this.txtCustomer.Location = new System.Drawing.Point(28, 175);
+            this.txtCustomer.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.PasswordChar = '\0';
+            this.txtCustomer.PlaceholderText = "";
+            this.txtCustomer.ReadOnly = true;
+            this.txtCustomer.SelectedText = "";
+            this.txtCustomer.ShadowDecoration.Parent = this.txtCustomer;
+            this.txtCustomer.Size = new System.Drawing.Size(260, 48);
+            this.txtCustomer.TabIndex = 32;
+            // 
+            // txtVehicle
+            // 
+            this.txtVehicle.BorderRadius = 6;
+            this.txtVehicle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVehicle.DefaultText = "";
+            this.txtVehicle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVehicle.DisabledState.Parent = this.txtVehicle;
+            this.txtVehicle.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVehicle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVehicle.FocusedState.Parent = this.txtVehicle;
+            this.txtVehicle.ForeColor = System.Drawing.Color.Black;
+            this.txtVehicle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVehicle.HoverState.Parent = this.txtVehicle;
+            this.txtVehicle.Location = new System.Drawing.Point(28, 261);
+            this.txtVehicle.Margin = new System.Windows.Forms.Padding(5);
+            this.txtVehicle.Name = "txtVehicle";
+            this.txtVehicle.PasswordChar = '\0';
+            this.txtVehicle.PlaceholderText = "";
+            this.txtVehicle.ReadOnly = true;
+            this.txtVehicle.SelectedText = "";
+            this.txtVehicle.ShadowDecoration.Parent = this.txtVehicle;
+            this.txtVehicle.Size = new System.Drawing.Size(260, 48);
+            this.txtVehicle.TabIndex = 37;
             // 
             // ReturnForm
             // 
@@ -507,10 +507,8 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomer;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerID;
         private System.Windows.Forms.Label lblTitle;
-        private Guna.UI2.WinForms.Guna2TextBox txtVehicle;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
@@ -531,5 +529,7 @@
         private System.Windows.Forms.DateTimePicker dtStart;
         private System.Windows.Forms.DateTimePicker dtEnd;
         private System.Windows.Forms.DateTimePicker dtReturn;
+        private Guna.UI2.WinForms.Guna2TextBox txtCustomer;
+        private Guna.UI2.WinForms.Guna2TextBox txtVehicle;
     }
 }

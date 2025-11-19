@@ -81,6 +81,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
         {
             AddPaymentForm form = new AddPaymentForm();
             if (form.ShowDialog() == DialogResult.OK)
+            AppEvents.RaiseCustomersUpdated();
                 loadPayments();
         }
     }

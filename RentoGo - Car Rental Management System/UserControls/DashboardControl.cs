@@ -27,6 +27,21 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             LoadDashboardStats();
             LoadVehicleStatusChart();
             LoadRecentRentals();
+
+            //auto
+            //updates
+            AppEvents.VehiclesUpdated += () =>
+            {
+                LoadDashboardStats();
+                LoadVehicleStatusChart();
+            };
+            AppEvents.RentalsUpdated += () =>
+            {
+                LoadDashboardStats();
+                LoadRecentRentals();
+            };
+            AppEvents.PaymentsUpdated += () => LoadDashboardStats();
+            AppEvents.CustomersUpdated += () => LoadDashboardStats();
         }
 
         private void LoadDashboardStats()

@@ -189,7 +189,21 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             Color color = Color.Black;
 
             if (e.ColumnIndex == edit) color = Color.FromArgb(39, 174, 96);
-            if (e.ColumnIndex == ret) color = Color.FromArgb(241, 196, 15);
+            if (e.ColumnIndex == ret)
+            {
+                // Check if return is allowed
+                string status = dgvRentals.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                DateTime endDate = Convert.ToDateTime(dgvRentals.Rows[e.RowIndex].Cells["EndDate"].Value);
+                DateTime today = DateTime.Today;
+                if (status == "Reserved" || status == "Completed" || status == "Cancelled" || (status == "Active" && today != endDate))
+                {
+                    color = Color.Gray;
+                }
+                else
+                {
+                    color = Color.FromArgb(241, 196, 15);
+                }
+            }
             if (e.ColumnIndex == del) color = Color.FromArgb(192, 0, 0);
 
             e.PaintBackground(e.CellBounds, true);
@@ -197,7 +211,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             TextRenderer.DrawText(
                 e.Graphics,
                 text,
-                new Font("Segoe UI", 9, FontStyle.Bold),  
+                new Font("Segoe UI", 9, FontStyle.Bold),
                 e.CellBounds,
                 color,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
@@ -262,6 +276,16 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             }
             else if (col == "Return")
             {
+                string status = dgvRentals.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                DateTime endDate = Convert.ToDateTime(dgvRentals.Rows[e.RowIndex].Cells["EndDate"].Value);
+                DateTime today = DateTime.Today;
+
+                if (status == "Reserved" || status == "Completed" || (status == "Active" && today != endDate))
+                {
+                    MessageBox.Show("Return is not available for this rental.");
+                    return;
+                }
+
                 using (ReturnForm r = new ReturnForm(id))
                 {
                     r.FormClosed += (s, a) => { summary(); load(); };
@@ -282,34 +306,32 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
         {
             DialogResult c = MessageBox.Show("Delete this rental?", "Confirm",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
             if (c != DialogResult.Yes) return;
-
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-
                     SqlCommand chk = new SqlCommand("SELECT Status FROM Rentals WHERE RentalID=@id", con);
                     chk.Parameters.AddWithValue("@id", id);
                     string s = chk.ExecuteScalar()?.ToString();
-
                     if (s == "Active" || s == "Completed")
                     {
                         MessageBox.Show("You cannot delete active or completed rentals.");
                         return;
                     }
-
                     SqlCommand cmd = new SqlCommand("DELETE FROM Rentals WHERE RentalID=@id", con);
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }
-
+                AppEvents.RaiseRentalsUpdated();
                 summary();
                 load();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting rental:\n" + ex.Message);
+            }
         }
 
         private void btnAddRental_Click(object sender, EventArgs e)
@@ -318,7 +340,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             {
                 addForm.FormClosed += (s, args) =>
                 {
-                    summary();  
+                    summary();
                     load();
                 };
                 addForm.ShowDialog();

@@ -91,18 +91,11 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             decimal lateFee = overdueDays * dailyRate;
             txtLateFee.Text = lateFee.ToString("0.00");
 
-            // Calculate total before payments
             decimal totalBeforePayments = originalTotal + lateFee + damage;
 
-            // Get total payments made
             decimal totalPayments = getTotalPayments();
 
-            // Show payments made (if you add txtPaymentsMade field)
-            // txtPaymentsMade.Text = totalPayments.ToString("0.00");
-
-            // Calculate final amount due
             decimal finalTotal = totalBeforePayments - totalPayments;
-
             // Ensure final total is not negative
             if (finalTotal < 0) finalTotal = 0;
 
@@ -180,7 +173,6 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     cmd2.ExecuteNonQuery();
                 }
 
-                // Trigger the event to update all related controls
                 AppEvents.RaiseRentalsUpdated();
 
                 MessageBox.Show("Vehicle returned successfully.", "success");

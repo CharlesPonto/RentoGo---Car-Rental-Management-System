@@ -25,7 +25,11 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 loadVehicles();
                 cbStatusFilter.Items.AddRange(new string[] { "All", "Available", "Reserved", "Rented" });
                 cbStatusFilter.SelectedIndex = 0;
-                AppEvents.VehiclesUpdated += () => loadVehicles();
+                // Subscribe to vehicle updates
+                AppEvents.VehiclesUpdated += () =>
+                {
+                    loadVehicles();
+                };
             }
             catch (Exception ex)
             {
@@ -124,6 +128,7 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 if (dgvVehicles.Columns.Contains("Edit")) dgvVehicles.Columns.Remove("Edit");
                 if (dgvVehicles.Columns.Contains("Delete")) dgvVehicles.Columns.Remove("Delete");
 
+
                 DataGridViewButtonColumn editCol = new DataGridViewButtonColumn
                 {
                     Name = "Edit",
@@ -154,6 +159,8 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 MessageBox.Show("failed to add action buttons:\n" + ex.Message,
                     "ui setup error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            AppEvents.RaiseCustomersUpdated();
         }
 
         // style
@@ -233,7 +240,6 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
             try
             {
                 if (e.RowIndex < 0) return;
-
                 string columnName = dgvVehicles.Columns[e.ColumnIndex].Name;
                 if (!int.TryParse(dgvVehicles.Rows[e.RowIndex].Cells["VehicleID"].Value?.ToString(), out int vehicleId))
                 {
@@ -241,9 +247,14 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                         "data error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                string vehicleStatus = dgvVehicles.Rows[e.RowIndex].Cells["Status"].Value?.ToString();
                 if (columnName == "Edit")
                 {
+                    if (vehicleStatus == "Rented")
+                    {
+                        MessageBox.Show("Cannot edit a rented vehicle.", "Edit Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     using (AddEditVehicleForm editForm = new AddEditVehicleForm(vehicleId))
                     {
                         editForm.FormClosed += (s, args) => loadVehicles();
@@ -252,9 +263,13 @@ namespace RentoGo___Car_Rental_Management_System.UserControls
                 }
                 else if (columnName == "Delete")
                 {
+                    if (vehicleStatus == "Rented")
+                    {
+                        MessageBox.Show("Cannot delete a rented vehicle.", "Delete Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     deleteVehicle(vehicleId);
                 }
-
                 this.BeginInvoke((Action)(() =>
                 {
                     dgvVehicles.ClearSelection();

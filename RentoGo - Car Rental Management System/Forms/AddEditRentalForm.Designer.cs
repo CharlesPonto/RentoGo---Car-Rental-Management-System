@@ -30,7 +30,6 @@
         {
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtVehicleName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,8 +46,9 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
-            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtVehicleID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel4
@@ -71,7 +71,7 @@
             this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FocusedColor = System.Drawing.Color.Empty;
             this.cbStatus.FocusedState.Parent = this.cbStatus;
-            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.HoverState.Parent = this.cbStatus;
@@ -82,31 +82,6 @@
             this.cbStatus.ShadowDecoration.Parent = this.cbStatus;
             this.cbStatus.Size = new System.Drawing.Size(232, 36);
             this.cbStatus.TabIndex = 24;
-            // 
-            // txtVehicleName
-            // 
-            this.txtVehicleName.BorderRadius = 6;
-            this.txtVehicleName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtVehicleName.DefaultText = "";
-            this.txtVehicleName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtVehicleName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtVehicleName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVehicleName.DisabledState.Parent = this.txtVehicleName;
-            this.txtVehicleName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVehicleName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVehicleName.FocusedState.Parent = this.txtVehicleName;
-            this.txtVehicleName.ForeColor = System.Drawing.Color.Black;
-            this.txtVehicleName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVehicleName.HoverState.Parent = this.txtVehicleName;
-            this.txtVehicleName.Location = new System.Drawing.Point(299, 211);
-            this.txtVehicleName.Margin = new System.Windows.Forms.Padding(5);
-            this.txtVehicleName.Name = "txtVehicleName";
-            this.txtVehicleName.PasswordChar = '\0';
-            this.txtVehicleName.PlaceholderText = "";
-            this.txtVehicleName.SelectedText = "";
-            this.txtVehicleName.ShadowDecoration.Parent = this.txtVehicleName;
-            this.txtVehicleName.Size = new System.Drawing.Size(220, 48);
-            this.txtVehicleName.TabIndex = 23;
             // 
             // guna2HtmlLabel3
             // 
@@ -146,6 +121,7 @@
             this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerID.FocusedState.Parent = this.txtCustomerID;
+            this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerID.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerID.HoverState.Parent = this.txtCustomerID;
@@ -272,6 +248,7 @@
             this.txtRate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRate.FocusedState.Parent = this.txtRate;
+            this.txtRate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRate.ForeColor = System.Drawing.Color.Black;
             this.txtRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRate.HoverState.Parent = this.txtRate;
@@ -310,6 +287,7 @@
             this.txtTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.FocusedState.Parent = this.txtTotal;
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
@@ -339,43 +317,20 @@
             // dtStart
             // 
             this.dtStart.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtStart.Location = new System.Drawing.Point(556, 124);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(232, 22);
+            this.dtStart.Size = new System.Drawing.Size(232, 30);
             this.dtStart.TabIndex = 44;
             // 
             // dtEnd
             // 
             this.dtEnd.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEnd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEnd.Location = new System.Drawing.Point(556, 214);
             this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(232, 22);
+            this.dtEnd.Size = new System.Drawing.Size(232, 30);
             this.dtEnd.TabIndex = 45;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.BorderRadius = 6;
-            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerName.DefaultText = "";
-            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.DisabledState.Parent = this.txtCustomerName;
-            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.FocusedState.Parent = this.txtCustomerName;
-            this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.HoverState.Parent = this.txtCustomerName;
-            this.txtCustomerName.Location = new System.Drawing.Point(39, 214);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.PasswordChar = '\0';
-            this.txtCustomerName.PlaceholderText = "";
-            this.txtCustomerName.SelectedText = "";
-            this.txtCustomerName.ShadowDecoration.Parent = this.txtCustomerName;
-            this.txtCustomerName.Size = new System.Drawing.Size(220, 48);
-            this.txtCustomerName.TabIndex = 46;
             // 
             // txtVehicleID
             // 
@@ -389,6 +344,7 @@
             this.txtVehicleID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtVehicleID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVehicleID.FocusedState.Parent = this.txtVehicleID;
+            this.txtVehicleID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVehicleID.ForeColor = System.Drawing.Color.Black;
             this.txtVehicleID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVehicleID.HoverState.Parent = this.txtVehicleID;
@@ -402,13 +358,33 @@
             this.txtVehicleID.Size = new System.Drawing.Size(220, 48);
             this.txtVehicleID.TabIndex = 47;
             // 
+            // cbCustomer
+            // 
+            this.cbCustomer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.ItemHeight = 23;
+            this.cbCustomer.Location = new System.Drawing.Point(39, 210);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(220, 31);
+            this.cbCustomer.TabIndex = 48;
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(299, 210);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(220, 31);
+            this.cbVehicle.TabIndex = 49;
+            // 
             // AddEditRentalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 448);
+            this.Controls.Add(this.cbVehicle);
+            this.Controls.Add(this.cbCustomer);
             this.Controls.Add(this.txtVehicleID);
-            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.dtEnd);
             this.Controls.Add(this.dtStart);
             this.Controls.Add(this.txtTotal);
@@ -419,7 +395,6 @@
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.cbStatus);
-            this.Controls.Add(this.txtVehicleName);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.txtCustomerID);
@@ -440,7 +415,6 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2ComboBox cbStatus;
-        private Guna.UI2.WinForms.Guna2TextBox txtVehicleName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerID;
@@ -457,7 +431,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private System.Windows.Forms.DateTimePicker dtStart;
         private System.Windows.Forms.DateTimePicker dtEnd;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerName;
         private Guna.UI2.WinForms.Guna2TextBox txtVehicleID;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private System.Windows.Forms.ComboBox cbVehicle;
     }
 }

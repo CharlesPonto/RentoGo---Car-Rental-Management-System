@@ -172,6 +172,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                         "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
+                    AppEvents.RaiseVehiclesUpdated();
                 }
             }
             catch (SqlException ex)
