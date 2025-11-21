@@ -320,6 +320,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblTitle);
             this.Name = "AddPaymentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPaymentForm";
             this.Load += new System.EventHandler(this.AddPaymentForm_Load);
             this.ResumeLayout(false);

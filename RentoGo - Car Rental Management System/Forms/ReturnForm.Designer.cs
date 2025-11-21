@@ -498,6 +498,7 @@
             this.Controls.Add(this.lblCustomerID);
             this.Controls.Add(this.lblTitle);
             this.Name = "ReturnForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReturnForm";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
             this.ResumeLayout(false);

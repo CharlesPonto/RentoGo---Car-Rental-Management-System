@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace RentoGo___Car_Rental_Management_System.Forms
@@ -84,7 +85,23 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                 error += "Address is required.\n";
 
             if (string.IsNullOrWhiteSpace(txtLicenseNo.Text))
+            {
                 error += "License number is required.\n";
+            }
+            else
+            {
+                string license = txtLicenseNo.Text.Trim().ToUpper();
+                string licensePattern = @"^[A-Z0-9]{7}$";
+
+                if (!Regex.IsMatch(license, licensePattern))
+                {
+                    error += "License number must be exactly 7 characters, alphanumeric only (no spaces or symbols).\n";
+                }
+                else
+                {
+                    txtLicenseNo.Text = license;
+                }
+            }
 
             if (!string.IsNullOrEmpty(error))
             {
@@ -109,7 +126,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     // check duplicate license number
                     SqlCommand checkCmd = new SqlCommand(
                         "SELECT COUNT(*) FROM Customers WHERE LicenseNo = @license AND CustomerID != @id", con);
-                    checkCmd.Parameters.AddWithValue("@license", txtLicenseNo.Text.Trim());
+                    checkCmd.Parameters.AddWithValue("@license", txtLicenseNo.Text.Trim().ToUpper());
                     checkCmd.Parameters.AddWithValue("@id", customerId);
                     int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
 
@@ -140,7 +157,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     cmd.Parameters.AddWithValue("@name", txtFullName.Text.Trim());
                     cmd.Parameters.AddWithValue("@contact", txtContact.Text.Trim());
                     cmd.Parameters.AddWithValue("@address", txtAddress.Text.Trim());
-                    cmd.Parameters.AddWithValue("@license", txtLicenseNo.Text.Trim());
+                    cmd.Parameters.AddWithValue("@license", txtLicenseNo.Text.Trim().ToUpper());
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show(customerId == 0
@@ -167,6 +184,13 @@ namespace RentoGo___Car_Rental_Management_System.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Prevent spaces in License No
+        private void txtLicenseNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

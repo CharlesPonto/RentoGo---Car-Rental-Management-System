@@ -40,7 +40,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                 cbStatus.Enabled = true;
             }
 
-            loadAllVehicles(); 
+            loadAllVehicles(); // load all vehicles except maintenance
             loadAvailableCustomers();
 
             if (rentalId > 0)
@@ -56,7 +56,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                 btnSave.Text = "Add";
             }
 
-            // Events
+            // events
             dtStart.ValueChanged += (s, a) => computeTotalCharge();
             dtEnd.ValueChanged += (s, a) => computeTotalCharge();
             cbVehicle.TextChanged += (s, a) => updateVehicleID();
@@ -65,6 +65,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             cbCustomer.SelectedIndexChanged += (s, a) => updateCustomerID();
         }
 
+        // load all vehicles except those in maintenance
         private void loadAllVehicles()
         {
             try
@@ -72,7 +73,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT VehicleID, Model FROM Vehicles ORDER BY VehicleID"; // Removed Status filter
+                    string query = "SELECT VehicleID, Model FROM Vehicles WHERE Status != 'Maintenance' ORDER BY VehicleID"; // exclude maintenance
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -81,7 +82,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     {
                         int id = Convert.ToInt32(reader["VehicleID"]);
                         string model = reader["Model"].ToString();
-                        cbVehicle.Items.Add($"{id} - {model}"); // Format: "ID - Model"
+                        cbVehicle.Items.Add($"{id} - {model}"); // format: "id - model"
                     }
                     reader.Close();
                 }
@@ -92,7 +93,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
         }
 
-        // Load available customers (no active rentals)
+        // load available customers (no active rentals)
         private void loadAvailableCustomers()
         {
             try
@@ -115,7 +116,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     {
                         int id = Convert.ToInt32(reader["CustomerID"]);
                         string name = reader["FullName"].ToString();
-                        cbCustomer.Items.Add($"{id} - {name}"); // Format: "ID - FullName"
+                        cbCustomer.Items.Add($"{id} - {name}"); // format: "id - fullname"
                     }
                     reader.Close();
                 }
@@ -126,13 +127,13 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
         }
 
-        // Update txtVehicleID when cbVehicle changes
+        // update txtVehicleID when cbVehicle changes
         private void updateVehicleID()
         {
             if (int.TryParse(cbVehicle.Text.Split('-')[0].Trim(), out int id))
             {
                 txtVehicleID.Text = id.ToString();
-                loadVehicle(); // Update rate for calculation
+                loadVehicle(); // update rate for calculation
             }
             else
             {
@@ -141,13 +142,13 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
         }
 
-        // Update txtCustomerID when cbCustomer changes
+        // update txtCustomerID when cbCustomer changes
         private void updateCustomerID()
         {
             if (int.TryParse(cbCustomer.Text.Split('-')[0].Trim(), out int id))
             {
                 txtCustomerID.Text = id.ToString();
-                // No need to load customer name since ComboBox shows it
+                // no need to load customer name since ComboBox shows it
             }
             else
             {
@@ -174,7 +175,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     {
                         txtCustomerID.Text = r["CustomerID"].ToString();
                         txtVehicleID.Text = r["VehicleID"].ToString();
-                        // Set ComboBox text to match the format (if available)
+                        // set ComboBox text to match the format (if available)
                         cbCustomer.Text = $"{r["CustomerID"]} - {getCustomerName(Convert.ToInt32(r["CustomerID"]))}";
                         cbVehicle.Text = $"{r["VehicleID"]} - {getVehicleModel(Convert.ToInt32(r["VehicleID"]))}";
                         dtStart.Value = Convert.ToDateTime(r["StartDate"]);
@@ -185,7 +186,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     r.Close();
                 }
 
-                loadVehicle(); // Load rate for calculation
+                loadVehicle(); // load rate for calculation
             }
             catch (Exception ex)
             {
@@ -193,7 +194,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
         }
 
-        // Helper to get customer name (for editing)
+        // helper to get customer name (for editing)
         private string getCustomerName(int id)
         {
             try
@@ -212,7 +213,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
         }
 
-        // Helper to get vehicle model (for editing)
+        // helper to get vehicle model (for editing)
         private string getVehicleModel(int id)
         {
             try
@@ -264,7 +265,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
 
             int days = (dtEnd.Value.Date - dtStart.Value.Date).Days;
-            if (days < 1) days = 1;
+            if (days < 1) days = 1; // same-day rentals charge for 1 day
 
             txtTotal.Text = (rate * days).ToString("0.00");
         }
@@ -279,23 +280,27 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             if (!int.TryParse(txtVehicleID.Text, out _))
                 err += "Vehicle ID is invalid.\n";
 
+            // check if vehicle is in maintenance
+            if (isVehicleInMaintenance())
+                err += "This vehicle is currently under maintenance and cannot be rented.\n";
+
             if (!decimal.TryParse(txtRate.Text, out _))
                 err += "Rate is invalid.\n";
 
             if (!decimal.TryParse(txtTotal.Text, out _))
                 err += "Total charge is invalid.\n";
 
-            // Real-world date validations
+            // real-world date validations
             if (dtStart.Value.Date < DateTime.Today)
                 err += "Start date cannot be in the past.\n";
 
-            if (dtEnd.Value.Date <= dtStart.Value.Date)
-                err += "End date must be after the start date.\n";
+            if (dtEnd.Value.Date < dtStart.Value.Date) // allow same-day (end == start)
+                err += "End date must be on or after the start date.\n";
 
             if (rentalId > 0 && cbStatus.SelectedItem == null)
                 err += "Please select a status.\n";
 
-            // Check for customer uniqueness (no multiple active rentals)
+            // check for customer uniqueness (no multiple active rentals)
             if (isCustomerAlreadyRenting())
                 err += "This customer already has an active rental.\n";
 
@@ -309,7 +314,27 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             return true;
         }
 
-        // Check if the vehicle is available during the selected dates
+        // check if the vehicle is in maintenance
+        private bool isVehicleInMaintenance()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT Status FROM Vehicles WHERE VehicleID = @id", con);
+                    cmd.Parameters.AddWithValue("@id", int.Parse(txtVehicleID.Text));
+                    string status = cmd.ExecuteScalar()?.ToString();
+                    return status == "Maintenance";
+                }
+            }
+            catch
+            {
+                return false; // allow if check fails
+            }
+        }
+
+        // check if the vehicle is available during the selected dates
         private bool isVehicleAvailable()
         {
             try
@@ -328,7 +353,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                               OR (StartDate >= @start AND EndDate <= @end)
                           )";
 
-                    // Exclude current rental if editing
+                    // exclude current rental if editing
                     if (rentalId > 0)
                         query += " AND RentalID != @rid";
 
@@ -357,7 +382,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             return true;
         }
 
-        // Check if the customer already has an active rental
+        // check if the customer already has an active rental
         private bool isCustomerAlreadyRenting()
         {
             try
@@ -368,7 +393,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
 
                     string query = "SELECT COUNT(*) FROM Rentals WHERE CustomerID = @cid AND Status IN ('Reserved', 'Active')";
 
-                    // Exclude current rental if editing
+                    // exclude current rental if editing
                     if (rentalId > 0)
                         query += " AND RentalID != @rid";
 
@@ -383,14 +408,14 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             }
             catch
             {
-                return false; // Allow save if check fails, but log if needed
+                return false; // allow save if check fails, but log if needed
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!validateFields()) return;
-            // Check vehicle availability before saving
+            // check vehicle availability before saving
             if (!isVehicleAvailable()) return;
             try
             {
@@ -403,7 +428,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
                     {
                         cmd = new SqlCommand(@"
                             INSERT INTO Rentals (CustomerID, VehicleID, StartDate, EndDate, TotalCharge, Status)
-                            VALUES (@c, @v, @s, @e, @t, @st)", con); // Use selected status
+                            VALUES (@c, @v, @s, @e, @t, @st)", con); // use selected status
                         cmd.Parameters.AddWithValue("@st", selectedStatus);
                     }
                     else

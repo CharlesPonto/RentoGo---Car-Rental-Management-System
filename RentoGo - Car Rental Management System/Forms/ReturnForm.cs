@@ -18,6 +18,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
         {
             InitializeComponent();
             rentalId = id;
+            txtLateFee.Text = "0.00";   
         }
 
         private void ReturnForm_Load(object sender, EventArgs e)

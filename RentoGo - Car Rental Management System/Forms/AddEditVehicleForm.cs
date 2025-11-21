@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace RentoGo___Car_Rental_Management_System.Forms
@@ -87,8 +88,28 @@ namespace RentoGo___Car_Rental_Management_System.Forms
             if (string.IsNullOrWhiteSpace(txtType.Text))
                 error += "Type is required.\n";
 
+            // Plate number required + format check
             if (string.IsNullOrWhiteSpace(txtPlateNo.Text))
+            {
                 error += "Plate number is required.\n";
+            }
+            else
+            {
+                string plate = txtPlateNo.Text.Trim().ToUpper();
+
+                // Example format: ABC-123
+                string platePattern = @"^[A-Z]{3}-\d{3}$";
+
+                if (!Regex.IsMatch(plate, platePattern))
+                {
+                    error += "Plate number must be in the format ABC-123 (3 letters, a dash, and 3 digits).\n";
+                }
+                else
+                {
+                    // Normalize text box value (uppercased, trimmed, valid)
+                    txtPlateNo.Text = plate;
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(txtRate.Text))
                 error += "Rate per day is required.\n";
@@ -111,6 +132,7 @@ namespace RentoGo___Car_Rental_Management_System.Forms
 
             return true;
         }
+
 
         // save
         private void btnSave_Click(object sender, EventArgs e)
